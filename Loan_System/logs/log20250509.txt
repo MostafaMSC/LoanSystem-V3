@@ -1,0 +1,958 @@
+2025-05-09 18:34:28.169 +03:00 [INF] User profile is available. Using 'C:\Users\MSI\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-09 18:34:28.266 +03:00 [INF] Now listening on: http://localhost:5109
+2025-05-09 18:34:28.267 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-09 18:34:28.268 +03:00 [INF] Hosting environment: Development
+2025-05-09 18:34:28.268 +03:00 [INF] Content root path: C:\Users\MSI\Desktop\LoanSystem\Loan_System
+2025-05-09 18:35:10.000 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/ - null null
+2025-05-09 18:35:10.032 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-05-09 18:35:10.061 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/ - 404 0 null 64.3333ms
+2025-05-09 18:35:10.071 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5109/, Response status code: 404
+2025-05-09 18:35:13.223 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-09 18:35:13.229 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - 200 16481 application/javascript; charset=utf-8 6.0838ms
+2025-05-09 18:35:14.451 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - null null
+2025-05-09 18:35:14.540 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 89.4185ms
+2025-05-09 18:36:15.856 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Auth/Login - null null
+2025-05-09 18:36:15.859 +03:00 [INF] CORS policy execution successful.
+2025-05-09 18:36:15.861 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Auth/Login - 204 null null 4.3109ms
+2025-05-09 18:36:15.876 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5109/Auth/Login - application/json 38
+2025-05-09 18:36:15.882 +03:00 [INF] CORS policy execution successful.
+2025-05-09 18:36:15.886 +03:00 [INF] Executing endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 18:36:15.913 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Loan_System.Modules.RegisterModule) on controller Loan_System.Controller.AuthController (Loan_System).
+2025-05-09 18:36:16.428 +03:00 [WRN] No store type was specified for the decimal property 'Contract_Amount' on entity type 'ContractsModule'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-09 18:36:16.431 +03:00 [WRN] No store type was specified for the decimal property 'Budget' on entity type 'LoanModule'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-09 18:36:16.959 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__request_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Password], [u].[Role], [u].[Username]
+FROM [UsersTable] AS [u]
+WHERE [u].[Username] = @__request_Username_0
+2025-05-09 18:36:17.011 +03:00 [INF] Executed action Loan_System.Controller.AuthController.Login (Loan_System) in 1093.4309ms
+2025-05-09 18:36:17.014 +03:00 [INF] Executed endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 18:36:17.015 +03:00 [ERR] Unhandled exception occurred.
+BCrypt.Net.SaltParseException: Invalid salt version
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.Verify(String text, String hash, Boolean enhancedEntropy, HashType hashType)
+   at Loan_System.Controller.AuthController.Login(RegisterModule request) in C:\Users\MSI\Desktop\LoanSystem\Loan_System\Controller\LoginController.cs:line 94
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\MSI\Desktop\LoanSystem\Loan_System\Modules\ExceptionMiddleware.cs:line 21
+2025-05-09 18:36:17.047 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5109/Auth/Login - 500 null application/json 1171.0319ms
+2025-05-09 18:38:38.211 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Auth/Login - null null
+2025-05-09 18:38:38.215 +03:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2025-05-09 18:38:38.217 +03:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2025-05-09 18:38:38.218 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Auth/Login - 405 0 null 7.7817ms
+2025-05-09 18:40:13.802 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5109/Auth/login - application/json 78
+2025-05-09 18:40:13.804 +03:00 [INF] CORS policy execution successful.
+2025-05-09 18:40:13.805 +03:00 [INF] Executing endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 18:40:13.806 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Loan_System.Modules.RegisterModule) on controller Loan_System.Controller.AuthController (Loan_System).
+2025-05-09 18:40:13.828 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__request_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Password], [u].[Role], [u].[Username]
+FROM [UsersTable] AS [u]
+WHERE [u].[Username] = @__request_Username_0
+2025-05-09 18:40:13.830 +03:00 [INF] Executed action Loan_System.Controller.AuthController.Login (Loan_System) in 23.1604ms
+2025-05-09 18:40:13.831 +03:00 [INF] Executed endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 18:40:13.831 +03:00 [ERR] Unhandled exception occurred.
+BCrypt.Net.SaltParseException: Invalid salt version
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.Verify(String text, String hash, Boolean enhancedEntropy, HashType hashType)
+   at Loan_System.Controller.AuthController.Login(RegisterModule request) in C:\Users\MSI\Desktop\LoanSystem\Loan_System\Controller\LoginController.cs:line 94
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\MSI\Desktop\LoanSystem\Loan_System\Modules\ExceptionMiddleware.cs:line 21
+2025-05-09 18:40:13.835 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5109/Auth/login - 500 null application/json 32.5871ms
+2025-05-09 18:40:38.523 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5109/Auth/login - application/json 78
+2025-05-09 18:40:38.525 +03:00 [INF] CORS policy execution successful.
+2025-05-09 18:40:38.526 +03:00 [INF] Executing endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 18:40:38.527 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Loan_System.Modules.RegisterModule) on controller Loan_System.Controller.AuthController (Loan_System).
+2025-05-09 18:40:38.571 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__request_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Password], [u].[Role], [u].[Username]
+FROM [UsersTable] AS [u]
+WHERE [u].[Username] = @__request_Username_0
+2025-05-09 18:40:38.573 +03:00 [INF] Executed action Loan_System.Controller.AuthController.Login (Loan_System) in 45.2446ms
+2025-05-09 18:40:38.574 +03:00 [INF] Executed endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 18:40:38.574 +03:00 [ERR] Unhandled exception occurred.
+BCrypt.Net.SaltParseException: Invalid salt version
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.Verify(String text, String hash, Boolean enhancedEntropy, HashType hashType)
+   at Loan_System.Controller.AuthController.Login(RegisterModule request) in C:\Users\MSI\Desktop\LoanSystem\Loan_System\Controller\LoginController.cs:line 94
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\MSI\Desktop\LoanSystem\Loan_System\Modules\ExceptionMiddleware.cs:line 21
+2025-05-09 18:40:38.576 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5109/Auth/login - 500 null application/json 53.7283ms
+2025-05-09 18:41:43.659 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5109/Auth/login - application/json 78
+2025-05-09 18:41:43.661 +03:00 [INF] CORS policy execution successful.
+2025-05-09 18:41:43.661 +03:00 [INF] Executing endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 18:41:43.662 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Loan_System.Modules.RegisterModule) on controller Loan_System.Controller.AuthController (Loan_System).
+2025-05-09 18:41:43.667 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__request_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Password], [u].[Role], [u].[Username]
+FROM [UsersTable] AS [u]
+WHERE [u].[Username] = @__request_Username_0
+2025-05-09 18:41:43.669 +03:00 [INF] Executed action Loan_System.Controller.AuthController.Login (Loan_System) in 5.4307ms
+2025-05-09 18:41:43.669 +03:00 [INF] Executed endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 18:41:43.670 +03:00 [ERR] Unhandled exception occurred.
+BCrypt.Net.SaltParseException: Invalid salt version
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.Verify(String text, String hash, Boolean enhancedEntropy, HashType hashType)
+   at Loan_System.Controller.AuthController.Login(RegisterModule request) in C:\Users\MSI\Desktop\LoanSystem\Loan_System\Controller\LoginController.cs:line 94
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\MSI\Desktop\LoanSystem\Loan_System\Modules\ExceptionMiddleware.cs:line 21
+2025-05-09 18:41:43.673 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5109/Auth/login - 500 null application/json 13.9202ms
+2025-05-09 18:44:08.009 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5109/Auth/Register - application/json 77
+2025-05-09 18:44:08.011 +03:00 [INF] CORS policy execution successful.
+2025-05-09 18:44:08.012 +03:00 [INF] Executing endpoint 'Loan_System.Controller.AuthController.Register (Loan_System)'
+2025-05-09 18:44:08.015 +03:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(Loan_System.Modules.RegisterModule) on controller Loan_System.Controller.AuthController (Loan_System).
+2025-05-09 18:44:08.028 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__request_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Password], [u].[Role], [u].[Username]
+FROM [UsersTable] AS [u]
+WHERE [u].[Username] = @__request_Username_0
+2025-05-09 18:44:08.252 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UsersTable] ([Password], [Role], [Username])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2);
+2025-05-09 18:44:08.269 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-09 18:44:08.273 +03:00 [INF] Executed action Loan_System.Controller.AuthController.Register (Loan_System) in 255.4393ms
+2025-05-09 18:44:08.274 +03:00 [INF] Executed endpoint 'Loan_System.Controller.AuthController.Register (Loan_System)'
+2025-05-09 18:44:08.275 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5109/Auth/Register - 200 null application/json; charset=utf-8 265.1061ms
+2025-05-09 18:44:18.481 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5109/Auth/login - application/json 77
+2025-05-09 18:44:18.483 +03:00 [INF] CORS policy execution successful.
+2025-05-09 18:44:18.484 +03:00 [INF] Executing endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 18:44:18.485 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Loan_System.Modules.RegisterModule) on controller Loan_System.Controller.AuthController (Loan_System).
+2025-05-09 18:44:18.489 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Password], [u].[Role], [u].[Username]
+FROM [UsersTable] AS [u]
+WHERE [u].[Username] = @__request_Username_0
+2025-05-09 18:44:18.676 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-09 18:44:18.678 +03:00 [INF] Executed action Loan_System.Controller.AuthController.Login (Loan_System) in 192.978ms
+2025-05-09 18:44:18.679 +03:00 [INF] Executed endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 18:44:18.679 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5109/Auth/login - 200 null application/json; charset=utf-8 198.7775ms
+2025-05-09 18:44:29.345 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Auth/login - null null
+2025-05-09 18:44:29.347 +03:00 [INF] CORS policy execution successful.
+2025-05-09 18:44:29.348 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Auth/login - 204 null null 2.4909ms
+2025-05-09 18:44:29.361 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5109/Auth/login - application/json 37
+2025-05-09 18:44:29.362 +03:00 [INF] CORS policy execution successful.
+2025-05-09 18:44:29.363 +03:00 [INF] Executing endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 18:44:29.364 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Loan_System.Modules.RegisterModule) on controller Loan_System.Controller.AuthController (Loan_System).
+2025-05-09 18:44:29.367 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__request_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Password], [u].[Role], [u].[Username]
+FROM [UsersTable] AS [u]
+WHERE [u].[Username] = @__request_Username_0
+2025-05-09 18:44:29.527 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-09 18:44:29.529 +03:00 [INF] Executed action Loan_System.Controller.AuthController.Login (Loan_System) in 164.2371ms
+2025-05-09 18:44:29.529 +03:00 [INF] Executed endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 18:44:29.530 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5109/Auth/login - 200 null application/json; charset=utf-8 168.6587ms
+2025-05-09 18:45:48.525 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/index.html - null null
+2025-05-09 18:45:48.558 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/index.html - 200 null text/html;charset=utf-8 32.815ms
+2025-05-09 18:45:48.582 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/swagger-ui.css - null null
+2025-05-09 18:45:48.587 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/index.css - null null
+2025-05-09 18:45:48.587 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/swagger-ui-bundle.js - null null
+2025-05-09 18:45:48.591 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-05-09 18:45:48.591 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/index.js - null null
+2025-05-09 18:45:48.592 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/swagger-ui-standalone-preset.js - null null
+2025-05-09 18:45:48.592 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/index.css - 200 202 text/css 4.7854ms
+2025-05-09 18:45:48.592 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-09 18:45:48.594 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/index.js - 200 null application/javascript;charset=utf-8 3.2685ms
+2025-05-09 18:45:48.597 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-05-09 18:45:48.599 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - 200 16481 application/javascript; charset=utf-8 6.363ms
+2025-05-09 18:45:48.600 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-05-09 18:45:48.601 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/swagger-ui.css - 200 154949 text/css 18.8965ms
+2025-05-09 18:45:48.604 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 12.0385ms
+2025-05-09 18:45:48.616 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-05-09 18:45:48.617 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 29.4633ms
+2025-05-09 18:45:49.298 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - null null
+2025-05-09 18:45:49.305 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 7.1732ms
+2025-05-09 18:45:49.327 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/favicon-32x32.png - null null
+2025-05-09 18:45:49.329 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-05-09 18:45:49.330 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/favicon-32x32.png - 200 628 image/png 2.5908ms
+2025-05-09 18:45:57.922 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/index.html - null null
+2025-05-09 18:45:57.924 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/index.html - 200 null text/html;charset=utf-8 2.1094ms
+2025-05-09 18:45:57.950 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-09 18:45:57.952 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - 200 16481 application/javascript; charset=utf-8 1.9429ms
+2025-05-09 18:45:59.655 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - null null
+2025-05-09 18:45:59.661 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 5.3678ms
+2025-05-09 18:46:00.698 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/index.html - null null
+2025-05-09 18:46:00.700 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/index.html - 200 null text/html;charset=utf-8 2.3497ms
+2025-05-09 18:46:00.726 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-09 18:46:00.727 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - 200 16481 application/javascript; charset=utf-8 1.3129ms
+2025-05-09 18:46:02.521 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - null null
+2025-05-09 18:46:02.525 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 3.4148ms
+2025-05-09 18:46:03.399 +03:00 [INF] Application is shutting down...
+2025-05-09 18:46:11.266 +03:00 [INF] User profile is available. Using 'C:\Users\MSI\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-05-09 18:46:11.340 +03:00 [INF] Now listening on: http://localhost:5109
+2025-05-09 18:46:11.342 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-05-09 18:46:11.342 +03:00 [INF] Hosting environment: Development
+2025-05-09 18:46:11.343 +03:00 [INF] Content root path: C:\Users\MSI\Desktop\LoanSystem\Loan_System
+2025-05-09 18:46:11.942 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/index.html - null null
+2025-05-09 18:46:11.996 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/index.html - 200 null text/html;charset=utf-8 55.0253ms
+2025-05-09 18:46:12.019 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-09 18:46:12.023 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - 200 16481 application/javascript; charset=utf-8 3.5504ms
+2025-05-09 18:46:12.509 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - null null
+2025-05-09 18:46:12.593 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 83.7399ms
+2025-05-09 18:46:24.711 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts?page=1&pageSize=10 - null null
+2025-05-09 18:46:24.717 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-05-09 18:46:24.734 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 18:46:24.748 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 18:46:24.834 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 18:46:25.092 +03:00 [WRN] No store type was specified for the decimal property 'Contract_Amount' on entity type 'ContractsModule'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-09 18:46:25.094 +03:00 [WRN] No store type was specified for the decimal property 'Budget' on entity type 'LoanModule'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-05-09 18:46:25.247 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-05-09 18:46:25.249 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-05-09 18:46:25.510 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 18:46:25.524 +03:00 [INF] Fetched 0 contracts.
+2025-05-09 18:46:25.529 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 18:46:25.543 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 790.0472ms
+2025-05-09 18:46:25.543 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 18:46:25.549 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts?page=1&pageSize=10 - 200 null application/json; charset=utf-8 837.4831ms
+2025-05-09 18:49:17.429 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5109/Contracts/AddContract - application/json 385
+2025-05-09 18:49:17.438 +03:00 [INF] CORS policy execution successful.
+2025-05-09 18:49:17.445 +03:00 [INF] Executing endpoint 'ContractsController.AddNewContract (Loan_System)'
+2025-05-09 18:49:17.456 +03:00 [INF] Route matched with {action = "AddNewContract", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddNewContract(Loan_System.Modules.ContractsModule) on controller ContractsController (Loan_System).
+2025-05-09 18:49:17.509 +03:00 [INF] Adding a new contract with LoanId 1.
+2025-05-09 18:49:17.695 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Precision = 18) (Scale = 2) (DbType = Decimal), @p6='?' (DbType = DateTime2), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ContractTable] ([AddedDays], [CompleteDate], [ContractName], [ContractNumber], [ContractType], [Contract_Amount], [Contract_signing_date], [DurationInDays], [LoanId], [StartDate], [Status], [TypeSymbol])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11);
+2025-05-09 18:49:17.730 +03:00 [INF] Contract with LoanId 1 added successfully.
+2025-05-09 18:49:17.734 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-05-09 18:49:17.744 +03:00 [INF] Executed action ContractsController.AddNewContract (Loan_System) in 284.6104ms
+2025-05-09 18:49:17.749 +03:00 [INF] Executed endpoint 'ContractsController.AddNewContract (Loan_System)'
+2025-05-09 18:49:17.754 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5109/Contracts/AddContract - 200 null text/plain; charset=utf-8 324.4828ms
+2025-05-09 18:53:34.606 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts?page=1&pageSize=10 - null null
+2025-05-09 18:53:34.609 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 18:53:34.610 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 18:53:34.613 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 18:53:34.664 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 18:53:34.670 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 18:53:34.671 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 18:53:34.674 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 63.5053ms
+2025-05-09 18:53:34.676 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 18:53:34.676 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts?page=1&pageSize=10 - 200 null application/json; charset=utf-8 70.3549ms
+2025-05-09 19:05:12.313 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:05:12.314 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:05:12.315 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:05:12.316 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:05:12.317 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 2.7788ms
+2025-05-09 19:05:12.317 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 3.8631ms
+2025-05-09 19:05:12.325 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:05:12.327 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:05:12.365 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:05:12.366 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:05:12.368 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:05:12.387 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:05:12.389 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:05:12.390 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:05:12.391 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 23.757ms
+2025-05-09 19:05:12.392 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:05:12.393 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 67.4967ms
+2025-05-09 19:05:12.407 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:05:12.408 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:05:12.409 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:05:12.410 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:05:12.411 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:05:12.413 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:05:12.414 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:05:12.415 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:05:12.415 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 5.0339ms
+2025-05-09 19:05:12.416 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:05:12.417 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 9.8837ms
+2025-05-09 19:05:27.784 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Auth/login - null null
+2025-05-09 19:05:27.785 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:05:27.786 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Auth/login - 204 null null 2.2358ms
+2025-05-09 19:05:27.796 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5109/Auth/login - application/json 37
+2025-05-09 19:05:27.798 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:05:27.798 +03:00 [INF] Executing endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 19:05:27.801 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Loan_System.Modules.RegisterModule) on controller Loan_System.Controller.AuthController (Loan_System).
+2025-05-09 19:05:27.834 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__request_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Password], [u].[Role], [u].[Username]
+FROM [UsersTable] AS [u]
+WHERE [u].[Username] = @__request_Username_0
+2025-05-09 19:05:28.011 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-09 19:05:28.015 +03:00 [INF] Executed action Loan_System.Controller.AuthController.Login (Loan_System) in 212.9818ms
+2025-05-09 19:05:28.016 +03:00 [INF] Executed endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 19:05:28.017 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5109/Auth/login - 200 null application/json; charset=utf-8 220.4912ms
+2025-05-09 19:05:39.140 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/index.html - null null
+2025-05-09 19:05:39.143 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/index.html - 200 null text/html;charset=utf-8 2.5334ms
+2025-05-09 19:05:39.163 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-09 19:05:39.166 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - 200 16481 application/javascript; charset=utf-8 2.8732ms
+2025-05-09 19:05:39.811 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - null null
+2025-05-09 19:05:39.820 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.6586ms
+2025-05-09 19:09:28.186 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:09:28.186 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:09:28.188 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:09:28.189 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:09:28.189 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 3.0365ms
+2025-05-09 19:09:28.190 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 3.339ms
+2025-05-09 19:09:28.195 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:09:28.196 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:09:28.198 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:09:28.198 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:09:28.199 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:09:28.212 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:09:28.213 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:09:28.214 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:09:28.215 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 15.7974ms
+2025-05-09 19:09:28.215 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:09:28.216 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 20.3817ms
+2025-05-09 19:09:28.231 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:09:28.232 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:09:28.233 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:09:28.234 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:09:28.234 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:09:28.236 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:09:28.238 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:09:28.238 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:09:28.239 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 4.7064ms
+2025-05-09 19:09:28.240 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:09:28.240 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 9.0226ms
+2025-05-09 19:12:49.743 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:12:49.744 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:12:49.745 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:12:49.746 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:12:49.747 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 3.4845ms
+2025-05-09 19:12:49.747 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 3.0006ms
+2025-05-09 19:12:49.752 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:12:49.754 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:12:49.755 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:12:49.756 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:12:49.757 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:12:49.767 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:12:49.768 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:12:49.768 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:12:49.769 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 12.3355ms
+2025-05-09 19:12:49.769 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:12:49.770 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 17.6945ms
+2025-05-09 19:12:49.773 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:12:49.774 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:12:49.775 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:12:49.775 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:12:49.777 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:12:49.778 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:12:49.780 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:12:49.781 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:12:49.782 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 5.5597ms
+2025-05-09 19:12:49.782 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:12:49.783 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 9.7759ms
+2025-05-09 19:12:52.085 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:12:52.087 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:12:52.087 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:12:52.088 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:12:52.088 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:12:52.090 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:12:52.092 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:12:52.092 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:12:52.093 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 4.5625ms
+2025-05-09 19:12:52.093 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:12:52.094 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 8.8691ms
+2025-05-09 19:12:52.099 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:12:52.100 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:12:52.101 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:12:52.102 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:12:52.103 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:12:52.105 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:12:52.106 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:12:52.106 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:12:52.107 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 4.7142ms
+2025-05-09 19:12:52.108 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:12:52.108 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 9.1593ms
+2025-05-09 19:33:17.246 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Auth/login - null null
+2025-05-09 19:33:17.249 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:33:17.249 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Auth/login - 204 null null 2.9567ms
+2025-05-09 19:33:17.262 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5109/Auth/login - application/json 37
+2025-05-09 19:33:17.266 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:33:17.267 +03:00 [INF] Executing endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 19:33:17.267 +03:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Loan_System.Modules.RegisterModule) on controller Loan_System.Controller.AuthController (Loan_System).
+2025-05-09 19:33:17.291 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[@__request_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Password], [u].[Role], [u].[Username]
+FROM [UsersTable] AS [u]
+WHERE [u].[Username] = @__request_Username_0
+2025-05-09 19:33:17.510 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-05-09 19:33:17.511 +03:00 [INF] Executed action Loan_System.Controller.AuthController.Login (Loan_System) in 242.6488ms
+2025-05-09 19:33:17.512 +03:00 [INF] Executed endpoint 'Loan_System.Controller.AuthController.Login (Loan_System)'
+2025-05-09 19:33:17.513 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5109/Auth/login - 200 null application/json; charset=utf-8 251.0524ms
+2025-05-09 19:33:18.759 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:33:18.762 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:33:18.764 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 5.0266ms
+2025-05-09 19:33:18.764 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:33:18.767 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:33:18.768 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 3.7211ms
+2025-05-09 19:33:18.771 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:33:18.773 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:33:18.774 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:33:18.775 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:33:18.777 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:33:18.784 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:33:18.786 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:33:18.787 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:33:18.789 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 11.8216ms
+2025-05-09 19:33:18.790 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:33:18.790 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 19.5579ms
+2025-05-09 19:33:18.804 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:33:18.806 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:33:18.807 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:33:18.808 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:33:18.810 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:33:18.812 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:33:18.813 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:33:18.815 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:33:18.816 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 6.4479ms
+2025-05-09 19:33:18.817 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:33:18.818 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 13.5162ms
+2025-05-09 19:33:18.995 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/index.html - null null
+2025-05-09 19:33:18.998 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/index.html - 200 null text/html;charset=utf-8 2.461ms
+2025-05-09 19:33:19.114 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-09 19:33:19.116 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - 200 16481 application/javascript; charset=utf-8 2.2164ms
+2025-05-09 19:33:21.766 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - null null
+2025-05-09 19:33:21.774 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 7.8533ms
+2025-05-09 19:33:41.117 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:33:41.118 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:33:41.118 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:33:41.119 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:33:41.119 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 2.3572ms
+2025-05-09 19:33:41.119 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 1.4572ms
+2025-05-09 19:33:41.125 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:33:41.126 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:33:41.127 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:33:41.128 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:33:41.129 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:33:41.131 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:33:41.132 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:33:41.132 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:33:41.133 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 4.229ms
+2025-05-09 19:33:41.133 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:33:41.134 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 8.4286ms
+2025-05-09 19:33:41.137 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:33:41.138 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:33:41.139 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:33:41.139 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:33:41.140 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:33:41.142 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:33:41.144 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:33:41.144 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:33:41.145 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 4.6469ms
+2025-05-09 19:33:41.146 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:33:41.146 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 9.0577ms
+2025-05-09 19:34:42.252 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:34:42.253 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:34:42.254 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:34:42.254 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:34:42.255 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 2.352ms
+2025-05-09 19:34:42.255 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 1.7168ms
+2025-05-09 19:34:42.263 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:34:42.264 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:34:42.265 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:34:42.266 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:34:42.267 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:34:42.278 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:34:42.279 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:34:42.280 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:34:42.280 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 13.8105ms
+2025-05-09 19:34:42.281 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:34:42.281 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 18.6873ms
+2025-05-09 19:34:42.287 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:34:42.288 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:34:42.288 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:34:42.289 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:34:42.290 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:34:42.291 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:34:42.293 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:34:42.293 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:34:42.294 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 4.3435ms
+2025-05-09 19:34:42.295 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:34:42.295 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 8.3091ms
+2025-05-09 19:35:14.239 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:35:14.239 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:35:14.240 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:35:14.241 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:35:14.242 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 2.9974ms
+2025-05-09 19:35:14.242 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 3.0105ms
+2025-05-09 19:35:14.251 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:35:14.251 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:35:14.252 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:35:14.254 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:35:14.254 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:14.255 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:14.255 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:35:14.256 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:35:14.257 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:35:14.258 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:35:14.269 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:35:14.269 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:35:14.270 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:35:14.271 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:35:14.272 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:35:14.272 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:35:14.273 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 14.881ms
+2025-05-09 19:35:14.273 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 16.159ms
+2025-05-09 19:35:14.274 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:14.274 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:14.275 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 24.21ms
+2025-05-09 19:35:14.276 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 24.9198ms
+2025-05-09 19:35:16.041 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:35:16.041 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:35:16.042 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:35:16.043 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:35:16.044 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 2.9913ms
+2025-05-09 19:35:16.044 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 3.3008ms
+2025-05-09 19:35:16.050 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:35:16.050 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:35:16.053 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:35:16.054 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:35:16.054 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:16.054 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:16.055 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:35:16.055 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:35:16.057 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:35:16.057 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:35:16.059 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:35:16.059 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:35:16.060 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:35:16.061 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:35:16.062 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:35:16.062 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:35:16.063 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 6.5356ms
+2025-05-09 19:35:16.063 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 6.135ms
+2025-05-09 19:35:16.064 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:16.064 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:16.065 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 15.2383ms
+2025-05-09 19:35:16.065 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 15.6575ms
+2025-05-09 19:35:39.109 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:35:39.110 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:35:39.111 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:35:39.111 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:35:39.112 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 2.7337ms
+2025-05-09 19:35:39.113 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 3.7671ms
+2025-05-09 19:35:39.119 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:35:39.119 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:35:39.121 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:35:39.121 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:35:39.122 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:39.122 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:39.123 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:35:39.123 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:35:39.124 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:35:39.124 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:35:39.126 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:35:39.126 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:35:39.128 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:35:39.129 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:35:39.129 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:35:39.129 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:35:39.130 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 6.0441ms
+2025-05-09 19:35:39.130 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 5.8727ms
+2025-05-09 19:35:39.131 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:39.131 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:39.132 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 13.2652ms
+2025-05-09 19:35:39.132 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 13.6488ms
+2025-05-09 19:35:40.956 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:35:40.957 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:35:40.958 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:40.958 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:35:40.960 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:35:40.962 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:35:40.963 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:35:40.964 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:35:40.965 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 5.2669ms
+2025-05-09 19:35:40.966 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:40.967 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 10.6753ms
+2025-05-09 19:35:40.970 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:35:40.971 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:35:40.972 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:40.972 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:35:40.974 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:35:40.976 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:35:40.977 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:35:40.977 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:35:40.978 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 4.5626ms
+2025-05-09 19:35:40.978 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:35:40.979 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 8.5162ms
+2025-05-09 19:35:55.222 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/index.html - null null
+2025-05-09 19:35:55.224 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/index.html - 200 null text/html;charset=utf-8 1.4081ms
+2025-05-09 19:35:55.241 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/swagger-ui.css - null null
+2025-05-09 19:35:55.243 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/index.css - null null
+2025-05-09 19:35:55.245 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - null null
+2025-05-09 19:35:55.247 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/swagger-ui-bundle.js - null null
+2025-05-09 19:35:55.247 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/index.js - null null
+2025-05-09 19:35:55.247 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/swagger-ui-standalone-preset.js - null null
+2025-05-09 19:35:55.248 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/_framework/aspnetcore-browser-refresh.js - 200 16481 application/javascript; charset=utf-8 2.6725ms
+2025-05-09 19:35:55.248 +03:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-05-09 19:35:55.253 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/index.js - 200 null application/javascript;charset=utf-8 5.3484ms
+2025-05-09 19:35:55.254 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-05-09 19:35:55.254 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-05-09 19:35:55.257 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-05-09 19:35:55.259 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/index.css - 200 202 text/css 15.3911ms
+2025-05-09 19:35:55.263 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/swagger-ui.css - 200 154949 text/css 22.3368ms
+2025-05-09 19:35:55.264 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/swagger-ui-standalone-preset.js - 200 229223 text/javascript 16.5263ms
+2025-05-09 19:35:55.264 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/swagger-ui-bundle.js - 200 1466908 text/javascript 17.8302ms
+2025-05-09 19:35:55.914 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - null null
+2025-05-09 19:35:55.918 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/swagger/favicon-32x32.png - null null
+2025-05-09 19:35:55.920 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 6.4759ms
+2025-05-09 19:35:55.921 +03:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-05-09 19:35:55.923 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/swagger/favicon-32x32.png - 200 628 image/png 5.2526ms
+2025-05-09 19:36:04.410 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts?page=1&pageSize=10 - null null
+2025-05-09 19:36:04.412 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:36:04.413 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:36:04.414 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:36:04.416 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:36:04.417 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:36:04.418 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:36:04.418 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 4.8297ms
+2025-05-09 19:36:04.419 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:36:04.420 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts?page=1&pageSize=10 - 200 null application/json; charset=utf-8 9.1346ms
+2025-05-09 19:36:22.910 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:36:22.911 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:36:22.911 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:36:22.911 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 1.6444ms
+2025-05-09 19:36:22.912 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:36:22.914 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 3.0389ms
+2025-05-09 19:36:22.916 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:36:22.918 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:36:22.918 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 19:36:22.919 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:36:22.920 +03:00 [INF] CORS policy execution successful.
+2025-05-09 19:36:22.921 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:36:22.921 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:36:22.922 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:36:22.923 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 19:36:22.925 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 19:36:22.930 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:36:22.930 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 19:36:22.931 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:36:22.932 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 19:36:22.932 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:36:22.933 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 19:36:22.933 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 11.2583ms
+2025-05-09 19:36:22.934 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 9.6471ms
+2025-05-09 19:36:22.935 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:36:22.936 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 19:36:22.936 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 19.9072ms
+2025-05-09 19:36:22.937 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 18.1469ms
+2025-05-09 20:12:57.119 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:12:57.119 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:12:57.121 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:12:57.121 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:12:57.122 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 3.2268ms
+2025-05-09 20:12:57.122 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 2.9099ms
+2025-05-09 20:12:57.128 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:12:57.129 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:12:57.129 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:12:57.130 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 20:12:57.131 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 20:12:57.139 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 20:12:57.140 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 20:12:57.141 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 20:12:57.142 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 10.8445ms
+2025-05-09 20:12:57.142 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:12:57.143 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 15.3574ms
+2025-05-09 20:12:57.148 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:12:57.149 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:12:57.150 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:12:57.151 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 20:12:57.152 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 20:12:57.155 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 20:12:57.157 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 20:12:57.158 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 20:12:57.159 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 6.4032ms
+2025-05-09 20:12:57.160 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:12:57.160 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 12.6876ms
+2025-05-09 20:19:28.708 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:19:28.709 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:19:28.709 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 1.4307ms
+2025-05-09 20:19:28.710 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:19:28.711 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:19:28.712 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 1.6344ms
+2025-05-09 20:19:28.714 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:19:28.716 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:19:28.717 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:19:28.717 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:19:28.718 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:19:28.718 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 20:19:28.719 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:19:28.720 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 20:19:28.721 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 20:19:28.722 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 20:19:28.734 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 20:19:28.734 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 20:19:28.735 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 20:19:28.735 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 20:19:28.736 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 20:19:28.736 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 20:19:28.737 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 14.5371ms
+2025-05-09 20:19:28.737 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 17.1945ms
+2025-05-09 20:19:28.738 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:19:28.739 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:19:28.739 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 22.7527ms
+2025-05-09 20:19:28.740 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 25.6851ms
+2025-05-09 20:21:45.821 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:21:45.821 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:21:45.823 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:21:45.823 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:21:45.824 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 2.6576ms
+2025-05-09 20:21:45.824 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 2.9836ms
+2025-05-09 20:21:45.829 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:21:45.830 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:21:45.831 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:21:45.832 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:21:45.833 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:21:45.833 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:21:45.833 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 20:21:45.834 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 20:21:45.835 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 20:21:45.836 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 20:21:45.844 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 20:21:45.844 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 20:21:45.846 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 20:21:45.846 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 20:21:45.847 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 20:21:45.848 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 20:21:45.848 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 13.7561ms
+2025-05-09 20:21:45.849 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 13.2217ms
+2025-05-09 20:21:45.850 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:21:45.851 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:21:45.851 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 21.8629ms
+2025-05-09 20:21:45.852 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 22.2276ms
+2025-05-09 20:22:00.489 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:22:00.489 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:22:00.490 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:22:00.491 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:22:00.491 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 2.6266ms
+2025-05-09 20:22:00.492 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 2.3287ms
+2025-05-09 20:22:00.499 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:22:00.499 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:22:00.501 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:22:00.502 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:22:00.503 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:22:00.503 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:22:00.503 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 20:22:00.503 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 20:22:00.505 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 20:22:00.506 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 20:22:00.507 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 20:22:00.508 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 20:22:00.509 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 20:22:00.510 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 20:22:00.510 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 20:22:00.510 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 20:22:00.511 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 6.7562ms
+2025-05-09 20:22:00.512 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 6.4132ms
+2025-05-09 20:22:00.513 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:22:00.513 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:22:00.514 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 15.2243ms
+2025-05-09 20:22:00.514 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 15.6754ms
+2025-05-09 20:58:18.435 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:58:18.436 +03:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:58:18.438 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:58:18.438 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:58:18.438 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 2.8676ms
+2025-05-09 20:58:18.439 +03:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5109/Contracts/GetAllContracts - 204 null null 3.8402ms
+2025-05-09 20:58:18.444 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:58:18.445 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:58:18.446 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:58:18.446 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 20:58:18.448 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 20:58:18.464 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 20:58:18.466 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 20:58:18.466 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 20:58:18.467 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 19.0049ms
+2025-05-09 20:58:18.467 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:58:18.468 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 23.9802ms
+2025-05-09 20:58:18.472 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - null null
+2025-05-09 20:58:18.473 +03:00 [INF] CORS policy execution successful.
+2025-05-09 20:58:18.474 +03:00 [INF] Executing endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:58:18.474 +03:00 [INF] Route matched with {action = "GetAllContracts", controller = "Contracts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllContracts(Int32, Int32) on controller ContractsController (Loan_System).
+2025-05-09 20:58:18.476 +03:00 [INF] Fetching all contracts with pagination (page 1, pageSize 10).
+2025-05-09 20:58:18.478 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[AddedDays], [c].[CompleteDate], [c].[ContractName], [c].[ContractNumber], [c].[ContractType], [c].[Contract_Amount], [c].[Contract_signing_date], [c].[DurationInDays], [c].[LoanId], [c].[StartDate], [c].[Status], [c].[TypeSymbol]
+FROM [ContractTable] AS [c]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-05-09 20:58:18.479 +03:00 [INF] Fetched 1 contracts.
+2025-05-09 20:58:18.480 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Loan_System.Modules.ContractsModule, Loan_System, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-05-09 20:58:18.480 +03:00 [INF] Executed action ContractsController.GetAllContracts (Loan_System) in 4.3141ms
+2025-05-09 20:58:18.481 +03:00 [INF] Executed endpoint 'ContractsController.GetAllContracts (Loan_System)'
+2025-05-09 20:58:18.482 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5109/Contracts/GetAllContracts - 200 null application/json; charset=utf-8 10.0541ms

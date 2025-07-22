@@ -1,0 +1,76 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\contracts\4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Loan_System</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Loan_System</BasePath>
+      <RelativePath>uploads/contracts/4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>yj9i10wxug</Fingerprint>
+      <Integrity>Ih6zUQhZCVne0Ag87pXMNdHjCduW4FIIyR4PoJRIzfU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\contracts\4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\contracts\93ae6f07-2a9c-4c60-a0ca-845543a93bae.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Loan_System</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Loan_System</BasePath>
+      <RelativePath>uploads/contracts/93ae6f07-2a9c-4c60-a0ca-845543a93bae.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>4em6cmlbey</Fingerprint>
+      <Integrity>JJUOMkF2x9DiVJ/WE0SZ4Sd+U7G24sqAwo6XFIl6Xhg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\contracts\93ae6f07-2a9c-4c60-a0ca-845543a93bae.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\contracts\b12db548-efe4-4538-9815-54fa1de938e0.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Loan_System</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Loan_System</BasePath>
+      <RelativePath>uploads/contracts/b12db548-efe4-4538-9815-54fa1de938e0.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>qnv70wiy6n</Fingerprint>
+      <Integrity>+kPQ1TDKYnOsFFb+jP/VCfJJ71MlxM0vOHgcNvbNXiM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\contracts\b12db548-efe4-4538-9815-54fa1de938e0.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\contracts\f89b47f6-5d82-44e0-9204-ea948e1dc0a7.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Loan_System</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Loan_System</BasePath>
+      <RelativePath>uploads/contracts/f89b47f6-5d82-44e0-9204-ea948e1dc0a7.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>pfhv6q8oks</Fingerprint>
+      <Integrity>+6e4+z5Q3FbiYsFnCuyF4ASqu3GMjGJVj+iZkf+Dh8Q=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\contracts\f89b47f6-5d82-44e0-9204-ea948e1dc0a7.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+  </ItemGroup>
+</Project>

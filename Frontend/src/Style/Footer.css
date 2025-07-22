@@ -1,0 +1,46 @@
+/* Footer.css */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* This ensures the main content takes up all remaining space */
+main {
+  flex: 1;
+}
+
+.page-footer {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  color: #6c757d;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #dee2e6;
+  margin-top: auto;
+  position: sticky;
+  bottom: 0;
+}
+
+/* RTL support for Arabic */
+.page-footer {
+  direction: rtl;
+}
+
+.custom-tooltip .tooltip-inner {
+  background-color: #00738f; /* Bootstrap danger color */
+  color: white;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.custom-tooltip.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color:  #00738f;
+}

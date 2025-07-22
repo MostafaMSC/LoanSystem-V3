@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.png",
+      "PackagePath": "staticwebassets\\uploads\\contracts\\4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\93ae6f07-2a9c-4c60-a0ca-845543a93bae.png",
+      "PackagePath": "staticwebassets\\uploads\\contracts\\93ae6f07-2a9c-4c60-a0ca-845543a93bae.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\b12db548-efe4-4538-9815-54fa1de938e0.png",
+      "PackagePath": "staticwebassets\\uploads\\contracts\\b12db548-efe4-4538-9815-54fa1de938e0.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\f89b47f6-5d82-44e0-9204-ea948e1dc0a7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\contracts\\f89b47f6-5d82-44e0-9204-ea948e1dc0a7.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Loan_System.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Loan_System.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.Loan_System.props",
+      "PackagePath": "build\\Loan_System.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.Loan_System.props",
+      "PackagePath": "buildMultiTargeting\\Loan_System.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.Loan_System.props",
+      "PackagePath": "buildTransitive\\Loan_System.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

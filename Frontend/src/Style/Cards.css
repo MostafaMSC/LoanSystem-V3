@@ -1,0 +1,113 @@
+.ag-format-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  /* padding: 50px 0; */
+  direction: rtl;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.ag-courses_box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.ag-courses_item {
+  flex: 1 1 calc(33.333% - 30px);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.ag-courses_itemdash {
+  flex: 1 1 calc(33.333% - 10px);
+}
+
+
+.ag-courses-item_link {
+  display: block;
+  padding: 30px 20px;
+  background-color: #fff;
+  color: #000;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.ag-courses-item_link:hover {
+  color: #fff;
+}
+
+.ag-courses-item_title {
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+}
+
+.ag-courses-item_bg {
+  position: absolute;
+  top: -75px;
+  right: -75px;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background-color: #f9b234;
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+
+.ag-courses-item_link:hover .ag-courses-item_bg {
+  transform: scale(10);
+}
+
+/* ألوان خلفية مميزة للعناصر */
+.ag-courses_item:nth-child(2n) .ag-courses-item_bg { background-color: #3ecd5e; }
+.ag-courses_item:nth-child(3n) .ag-courses-item_bg { background-color: #e44002; }
+.ag-courses_item:nth-child(4n) .ag-courses-item_bg { background-color: #17c7eb; }
+.ag-courses_item:nth-child(5n) .ag-courses-item_bg { background-color: #da55fb; }
+.ag-courses_item:nth-child(6n) .ag-courses-item_bg { background-color: #2efdd4; }
+
+
+/* Responsive */
+@media (max-width: 979px) {
+  .ag-courses_item {
+    flex: 1 1 calc(50% - 30px);
+  }
+}
+
+@media (max-width: 639px) {
+  .ag-courses_item {
+    flex: 1 1 100%;
+  }
+
+  .ag-courses-item_title {
+    font-size: 20px;
+  }
+
+  .ag-courses-item_link {
+    padding: 20px;
+  }
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
