@@ -6,33 +6,32 @@ import Footer from './Footer';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 
-export default function BudgetRevenueReport() {
-  const [department, setDepartment] = useState('');
+
+export default function NonSeverignRevenuesReport() {
+ const [department, setDepartment] = useState('');
   const [selectedYear, setSelectedYear] = useState('');
   const [selectedMonth, setSelectedMonth] = useState('');
-  const [revenues, setRevenues] = useState([]);
-  const [Privouserevenues, setPrivouseRevenues] = useState([]);
+    const [revenues, setRevenues] = useState([]);
+    const [Privouserevenues, setPrivouseRevenues] = useState([]);
+    const [allDepartments, setAllDepartments] = useState([]);
+      const [allRevenueInfo, setAllRevenueInfo] = useState([]);
+      const [error, setError] = useState('');
+      const [loading, setLoading] = useState(false);
+      const [departmentError, setDepartmentError] = useState('');
 
-  const [allDepartments, setAllDepartments] = useState([]);
-  const [allRevenueInfo, setAllRevenueInfo] = useState([]);
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [departmentError, setDepartmentError] = useState('');
-
-  useEffect(() => {
-    const today = new Date();
-    setSelectedMonth(today.getMonth() + 1);
-    setSelectedYear(today.getFullYear());
-
-    const storedDept = localStorage.getItem("UserDepartment");
-    if (storedDept) {
-      setDepartment(storedDept);
-    }
-
-    fetchAllDepartments();
-    fetchAllRevenueInfo();
-  }, []);
-    const printReport = () => {
+    useEffect(() => {
+        const today = new Date();
+        setSelectedMonth(today.getMonth() + 1);
+        setSelectedYear(today.getFullYear());
+    
+        const storedDept = localStorage.getItem("UserDepartment");
+        if (storedDept) {
+        setDepartment(storedDept);
+        }
+    
+        fetchAllDepartments();
+        }, []);
+const printReport = () => {
     const printArea = document.getElementById('print-area');
     if (!printArea) return;
 
@@ -123,38 +122,7 @@ export default function BudgetRevenueReport() {
       setAllDepartments([]);
     }
   };
-
-  const fetchAllRevenueInfo = async () => {
-    try {
-      setDepartmentError('');
-
-      const res = await api.get('/RevenuInfo/GetAllRevenues');
-
-      let revenueData = [];
-
-      if (res.data && Array.isArray(res.data.loans)) {
-        revenueData = res.data.loans;
-      } else if (res.data && Array.isArray(res.data.Loans)) {
-        revenueData = res.data.Loans;
-      } else if (Array.isArray(res.data)) {
-        revenueData = res.data;
-      }
-
-      console.log('Processed revenue info:', revenueData);
-      setAllRevenueInfo(revenueData);
-
-      if (revenueData.length === 0) {
-        setDepartmentError('لم يتم العثور على أي إيرادات في النظام');
-      }
-
-    } catch (err) {
-      console.error("Error fetching revenue info:", err);
-      setDepartmentError(`خطأ في جلب معلومات الإيرادات: ${err.response?.data?.message || err.message}`);
-      setAllRevenueInfo([]);
-    }
-  };
-
-  const fetchRevenues = async () => {
+const fetchRevenues = async () => {
     if (!selectedYear || !selectedMonth) {
       setError("يرجى تحديد الشهر والسنة.");
       return;
@@ -164,7 +132,7 @@ export default function BudgetRevenueReport() {
     setError('');
 
     try {
-      const url = `/BudgetRevenue/GetReportByDateAndDep?year=${selectedYear}&month=${selectedMonth}&department=${encodeURIComponent(department)}`;
+      const url = `/BudgetRevenue/GetNonSovereignRevenueByDepAndDate?year=${selectedYear}&month=${selectedMonth}&department=${encodeURIComponent(department)}`;
       console.log('Fetching revenues from:', url);
       
       const res = await api.get(url);
@@ -181,25 +149,26 @@ export default function BudgetRevenueReport() {
         const keys = Object.keys(res.data);
         const dataKey = keys.find(key => Array.isArray(res.data[key]));
         if (dataKey) {
-          data = res.data[dataKey];
+            data = res.data[dataKey];
         }
-      }
-      
-      console.log('Processed revenues data:', data);
-      setRevenues(data);
-      
+        }
+    
+        console.log('Processed revenues data:', data);
+        setRevenues(data);
+        
     } catch (err) {
-      console.error("Error fetching revenues:", err);
-      if (err.response?.status === 404) {
+        console.error("Error fetching revenues:", err);
+        if (err.response?.status === 404) {
         setRevenues([]);
         setError("لا توجد بيانات للفترة المحددة.");
-      } else {
+        } else {
         setError(`فشل في جلب البيانات: ${err.response?.data?.message || err.message}`);
-      }
+        }
     } finally {
-      setLoading(false);
+        setLoading(false);
     }
-  };
+    };
+
 
     const fetchPreviousRevenues = async () => {
   const prevMonth = selectedMonth === 1 ? 1 : selectedMonth; // Because your API fetches from Jan to (month - 1)
@@ -241,7 +210,7 @@ export default function BudgetRevenueReport() {
     setLoading(false);
   }
 };
-
+}
 const removeDuplicatesAndGroup = (revenues, filterSectionNonEmpty = true) => {
   const uniqueRevenues = revenues.reduce((acc, rev, index) => {
     const uniqueKey = `${rev.id || index}-${rev.revenueInfo?.id || rev.revenueId || ''}-${rev.department || rev.departmentName || ''}-${rev.revenueCost || 0}-${rev.recordedDate || ''}`;
@@ -253,9 +222,7 @@ const removeDuplicatesAndGroup = (revenues, filterSectionNonEmpty = true) => {
     }
     return acc;
   }, []);
-
-  // طبق فلتر القسم هنا
-  const filteredRevenues = uniqueRevenues.filter(rev => {
+const filteredRevenues = uniqueRevenues.filter(rev => {
     let sectionValue = rev.section || rev.Section || '';
     if (typeof sectionValue === 'string') {
       sectionValue = sectionValue.trim();
@@ -264,9 +231,7 @@ const removeDuplicatesAndGroup = (revenues, filterSectionNonEmpty = true) => {
     }
     return filterSectionNonEmpty ? sectionValue !== '' : sectionValue === '';
   });
-
-  // ثم جمع حسب القسم
-  return filteredRevenues.reduce((acc, rev, index) => {
+eturn filteredRevenues.reduce((acc, rev, index) => {
     let deptName = 'غير محدد';
 
     try {
@@ -290,201 +255,13 @@ const removeDuplicatesAndGroup = (revenues, filterSectionNonEmpty = true) => {
     return acc;
   }, {});
 };
-const groupedRevenuesWithSection = removeDuplicatesAndGroup(revenues, false); // ❌ should be true
-const groupedRevenuesWithoutSection = removeDuplicatesAndGroup(revenues, true); // ❌ should be false
-
-
-const departmentStructureWithSection = allDepartments.map(deptName => {
-  const deptRevenues = groupedRevenuesWithSection[deptName] || [];
-  const total = deptRevenues.reduce((sum, item) => {
-    const cost = parseFloat(item.revenueCost || 0);
-    return sum + (isNaN(cost) ? 0 : cost);
-  }, 0);
-
-  return {
-    name: deptName,
-    revenues: deptRevenues,
-    total
-  };
-});
-const departmentStructureWithoutSection = allDepartments.map(deptName => {
-  const deptRevenues = groupedRevenuesWithoutSection[deptName] || [];
-  const total = deptRevenues.reduce((sum, item) => {
-    const cost = parseFloat(item.revenueCost || 0);
-    return sum + (isNaN(cost) ? 0 : cost);
-  }, 0);
-
-  return {
-    name: deptName,
-    revenues: deptRevenues,
-    total
-  };
-});
-
-const PrivdepartmentStructure = allDepartments.map(deptName => {
-  const match = Privouserevenues.find(d =>
-    d.department?.trim() === deptName.trim()
-  );
-
-  const total = parseFloat(match?.carriedForwardTotal || 0);
-
-  return {
-    name: deptName,
-    revenues: [], // No detailed revenues for carried forward
-    total: isNaN(total) ? 0 : total
-  };
-});
-
-
-  // Add departments that aren't in the main list but have revenues
-  Object.keys(groupedRevenuesWithSection).forEach(deptName => {
-    if (!allDepartments.includes(deptName)) {
-      const deptRevenues = groupedRevenuesWithSection[deptName] || [];
-      const total = deptRevenues.reduce((sum, item) => {
-        const cost = parseFloat(item.revenueCost || 0);
-        return sum + (isNaN(cost) ? 0 : cost);
-      }, 0);
-      
-      departmentStructureWithSection.push({
-        name: deptName,
-        revenues: deptRevenues,
-        total: total
-      });
-    }
-  });
-
-  const exportToExcel = () => {
-    const filteredDepartments = departmentStructureWithSection.filter(dept => 
-      !department || dept.name === department
-    );
-
-    if (filteredDepartments.length === 0) {
-      alert("لا توجد أقسام للتصدير");
-      return;
-    }
-
-    try {
-      const excelData = [];
-      
-      filteredDepartments.forEach((dept) => {
-        excelData.push({
-          'القسم': dept.name,
-          'الرمز': '',
-          'اسم الإيراد': '',
-          'الفصل': '',
-          'النوع': '',
-          'التفاصيل': '',
-          'المبلغ': '',
-          'تاريخ التسجيل': '',
-          'ملاحظات': ''
-        });
-        
-        if (dept.revenues.length === 0) {
-          excelData.push({
-            'القسم': '',
-            'الرمز': '',
-            'اسم الإيراد': 'لا توجد إيرادات',
-            'الفصل': '',
-            'النوع': '',
-            'التفاصيل': '',
-            'المبلغ': 0,
-            'تاريخ التسجيل': '',
-            'ملاحظات': ''
-          });
-        } else {
-          dept.revenues.forEach(rev => {
-            excelData.push({
-              'القسم': '',
-              'الرمز': rev.revenueInfo?.symbol || rev.symbol || '',
-              'اسم الإيراد': rev.revenueInfo?.revenueName || rev.name || '',
-              'الفصل': rev.revenueInfo?.chapter || rev.chapter || '',
-              'النوع': rev.revenueInfo?.type || rev.type || '',
-              'التفاصيل': rev.revenueInfo?.typeDetails || rev.typeDetails || '',
-              'المبلغ': rev.revenueCost || 0,
-              'تاريخ التسجيل': rev.recordedDate ? 
-                (typeof rev.recordedDate === 'string' ? 
-                  rev.recordedDate.slice(0, 10) : 
-                  new Date(rev.recordedDate).toLocaleDateString('en-CA')
-                ) : '',
-              'ملاحظات': rev.notes || ''
-            });
-          });
-        }
-        
-        excelData.push({
-          'القسم': '',
-          'الرمز': '',
-          'اسم الإيراد': 'مجموع القسم',
-          'الفصل': '',
-          'النوع': '',
-          'التفاصيل': '',
-          'المبلغ': dept.total,
-          'تاريخ التسجيل': '',
-          'ملاحظات': ''
-        });
-        
-        excelData.push({
-          'القسم': '',
-          'الرمز': '',
-          'اسم الإيراد': '',
-          'الفصل': '',
-          'النوع': '',
-          'التفاصيل': '',
-          'المبلغ': '',
-          'تاريخ التسجيل': '',
-          'ملاحظات': ''
-        });
-      });
-
-      const worksheet = XLSX.utils.json_to_sheet(excelData);
-      const workbook = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(workbook, worksheet, 'Revenues');
-
-      const buffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
-      const blob = new Blob([buffer], { type: 'application/octet-stream' });
-      saveAs(blob, `revenue-report-${selectedYear}-${String(selectedMonth).padStart(2, '0')}.xlsx`);
-      
-    } catch (err) {
-      console.error("Error exporting to Excel:", err);
-      alert(`حدث خطأ أثناء التصدير: ${err.message}`);
-    }
-  };
-
-const totalPerDepartment = allDepartments.map(deptName => {
-  const current = departmentStructureWithSection.find(d => d.name === deptName)?.total || 0;
-  const previous = departmentStructureWithoutSection.find(d => d.name === deptName)?.total || 0;
-  return {
-    name: deptName,
-    total: current + previous
-  };
-});
-
-
-  const getMonthName = (monthNumber) => {
-    const months = [
-      'يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو',
-      'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'
-    ];
-    return months[parseInt(monthNumber) - 1] || monthNumber;
-  };
-
-  const formatDate = (dateString) => {
-    if (!dateString) return '';
-    try {
-      if (typeof dateString === 'string') {
-        return dateString.slice(0, 10);
-      }
-      return new Date(dateString).toLocaleDateString('en-CA');
-    } catch {
-      return '';
-    }
-  };
-
-  const formatCurrency = (amount) => {
-    const num = parseFloat(amount || 0);
-    return isNaN(num) ? '0' : num.toLocaleString();
-  };
-
+const getMonthName = (month) => {
+  const months = [
+    "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
+    "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"
+  ];
+  return months[month - 1] || '';
+};
   return (
     <>
       <NavMenu />
@@ -826,4 +603,4 @@ const totalPerDepartment = allDepartments.map(deptName => {
       <Footer />
     </>
   );
-}
+};

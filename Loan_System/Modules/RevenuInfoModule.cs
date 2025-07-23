@@ -4,10 +4,10 @@ public class RevenueInfoModule : Entity
 {
     [Required]
     [StringLength(100)]
-    public string RevenueName { get; set; }
-    public string Section { get; set; }
-    public string Chapter { get; set; }
-    public string Material { get; set; }
-    public string Type { get; set; }
-    public string TypeDetails { get; set; }
+    public string RevenueName { get; set; } = string.Empty;
+    public string Section { get; set; } = string.Empty;
+    public string Chapter { get; set; } = string.Empty;
+    public string Material { get; set; } = string.Empty;
+    public string Type { get; set; } = string.Empty;
+    public string TypeDetails { get; set; } = string.Empty;
 }

@@ -20,7 +20,7 @@ namespace Loan_System.Modules
         public int? SerialNo { get; set; }
         public ProjectType ProjectType { get; set; }
         [Required]
-        public string Location { get; set; }
+        public string Location { get; set; } = string.Empty;
 
         public string? District { get; set; }
 

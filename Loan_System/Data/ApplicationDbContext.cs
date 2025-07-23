@@ -30,6 +30,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityR
         public DbSet<PrivateMoneyPayments> PrivateMoneyPayments { get; set; }
 
         public DbSet<CashPaidPayments> CashPaidPayments { get; set; }
+        public DbSet<NonSovereignRevenues> NonSovereignRevenues { get; set; }
 
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

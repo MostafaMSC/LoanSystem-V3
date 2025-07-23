@@ -6,14 +6,14 @@
     public class BudgetRevenue : Entity
     {
         [Required]
-        public int RevenueId { get; set; } // Fixed typo: "RevenuId" -> "RevenueId"
+        public int RevenueId { get; set; } 
         
         [ForeignKey("RevenueId")]
-        public virtual RevenueInfoModule RevenueInfo { get; set; } // Better naming
+        public virtual required RevenueInfoModule RevenueInfo { get; set; }  // Better naming
         
         [Required]
-        public string Department { get; set; }
-                
+        public string Department { get; set; } = string.Empty;
+
         [Required]
         [Range(0, double.MaxValue, ErrorMessage = "Revenue cost must be positive")]
         public decimal RevenueCost { get; set; } // Changed to decimal for currency

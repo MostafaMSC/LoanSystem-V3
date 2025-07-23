@@ -446,41 +446,159 @@ public class BudgetRevenueController : ControllerBase
 
     [HttpGet("GetReportByDateAndDep")]
     public async Task<IActionResult> GetRevenueReport(int year, int month, string? department)
-{
-    try
     {
-        var query = _context.BudgetRevenueTable
-            .Include(br => br.RevenueInfo)
-            .Where(br => br.Month == month && br.Year == year);
-
-        if (!string.IsNullOrWhiteSpace(department))
+        try
         {
-            query = query.Where(br => br.Department == department);
-            _logger.LogInformation("Fetching revenue report for Department: {Department}, Year: {Year}, Month: {Month}", 
+            var query = _context.BudgetRevenueTable
+                .Include(br => br.RevenueInfo)
+                .Where(br => br.Month == month && br.Year == year);
+
+            if (!string.IsNullOrWhiteSpace(department))
+            {
+                query = query.Where(br => br.Department == department);
+                _logger.LogInformation("Fetching revenue report for Department: {Department}, Year: {Year}, Month: {Month}",
+                    department, year, month);
+            }
+            else
+            {
+                _logger.LogInformation("Fetching revenue report for all departments for Year: {Year}, Month: {Month}",
+                    year, month);
+            }
+
+            var reports = await query.OrderBy(br => br.RecordedDate).ToListAsync();
+
+            _logger.LogInformation("Found {Count} revenue records", reports.Count);
+
+            return Ok(reports);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error fetching revenue report for Department: {Department}, Year: {Year}, Month: {Month}",
                 department, year, month);
+            return StatusCode(500, new
+            {
+                Message = "خطأ في جلب تقرير الإيرادات",
+                Error = ex.Message
+            });
         }
-        else
-        {
-            _logger.LogInformation("Fetching revenue report for all departments for Year: {Year}, Month: {Month}", 
-                year, month);
-        }
 
-        var reports = await query.OrderBy(br => br.RecordedDate).ToListAsync();
-
-        _logger.LogInformation("Found {Count} revenue records", reports.Count);
-
-        return Ok(reports);
     }
-    catch (Exception ex)
+
+    [HttpGet("GetAllNonSovereignRevenues")]
+    public async Task<IActionResult> GetNonSovereignRevenues()
     {
-        _logger.LogError(ex, "Error fetching revenue report for Department: {Department}, Year: {Year}, Month: {Month}", 
-            department, year, month);
-        return StatusCode(500, new
+        try
         {
-            Message = "خطأ في جلب تقرير الإيرادات",
-            Error = ex.Message
-        });
+            var revenues = await _context.NonSovereignRevenues.ToListAsync();
+            return Ok(revenues);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error fetching non-sovereign revenues");
+            return StatusCode(500, new
+            {
+                Message = "خطأ في جلب البيانات",
+                Error = ex.Message
+            });
+        }
     }
-}
+
+
+    [HttpPost("CreateNonSovereignRevenue")]
+    public async Task<IActionResult> CreateNonSovereignRevenue([FromBody] NonSovereignRevenues revenue)
+    {
+        try
+        {
+            if (revenue == null)
+            {
+                return BadRequest("Invalid revenue data.");
+            }
+
+            await _context.NonSovereignRevenues.AddAsync(revenue);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetNonSovereignRevenues), new { id = revenue.Id }, revenue);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error creating non-sovereign revenue");
+            return StatusCode(500, new
+            {
+                Message = "خطأ في إنشاء البيانات",
+                Error = ex.Message
+            });
+        }
+    }
+    [HttpGet("GetNonSovereignRevenueByDepAndDate")]
+    public async Task<IActionResult> GetNonSovereignRevenueByDepAndDate(string department, int year, int month)
+    {
+        var revenue = await _context.NonSovereignRevenues
+            .Where(r => r.Department == department && r.Year == year && r.Month == month)
+            .ToListAsync();
+
+        if (revenue == null || !revenue.Any())
+        {
+            return NotFound(new
+            {
+                Message = "السجل غير موجود",
+                Department = department,
+                Year = year,
+                Month = month
+            });
+        }
+
+        return Ok(revenue);
+    }
+
+    [HttpPut("UpdateNonSovereignRevenues/{id}")]
+    public async Task<IActionResult> UpdateNonSovereignRevenue(int id, [FromBody] NonSovereignRevenues updatedRevenue)
+    {
+        if (id != updatedRevenue.Id)
+        {
+            return BadRequest("Mismatched revenue ID.");
+        }
+
+        var existingRevenue = await _context.NonSovereignRevenues.FindAsync(id);
+        if (existingRevenue == null)
+        {
+            return NotFound(new
+            {
+                Message = "السجل غير موجود",
+                Id = id
+            });
+        }
+
+        // Update the fields
+        existingRevenue.Department = updatedRevenue.Department;
+        existingRevenue.MinistryShare = updatedRevenue.MinistryShare;
+        existingRevenue.FinanceShare = updatedRevenue.FinanceShare;
+        existingRevenue.ResourceMaximizationInsurance = updatedRevenue.ResourceMaximizationInsurance;
+        existingRevenue.Year = updatedRevenue.Year;
+        existingRevenue.Month = updatedRevenue.Month;
+        existingRevenue.RecordedDate = updatedRevenue.RecordedDate;
+        existingRevenue.Notes = updatedRevenue.Notes;
+
+        await _context.SaveChangesAsync();
+
+        return Ok(existingRevenue);
+    }
+    [HttpDelete("DeleteNonSovereignRevenue/{id}")]
+    public async Task<IActionResult> DeleteNonSovereignRevenue(int id)
+    {
+        var revenue = await _context.NonSovereignRevenues.FindAsync(id);
+        if (revenue == null)
+        {
+            return NotFound(new
+            {
+                Message = "السجل غير موجود",
+                Id = id
+            });
+        }
+
+        _context.NonSovereignRevenues.Remove(revenue);
+        await _context.SaveChangesAsync();
+
+        return NoContent();
+    }
 
 }
