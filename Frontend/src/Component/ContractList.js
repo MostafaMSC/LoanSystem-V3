@@ -28,9 +28,6 @@ export default function ContractsList() {
   const [showAddContract, setShowAddContract] = useState(false);
   const [showEditContract, setShowEditContract] = useState(false);
   const [showAddRevenue, setShowAddRevenue] = useState(false);
-
-
-  // Enhanced date filter states
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [showDateFilters, setShowDateFilters] = useState(false);
@@ -42,7 +39,6 @@ export default function ContractsList() {
     { id: 2, label: 'تجهيز' },
     { id: 3, label: 'اعمال' },
     { id: 4, label: 'اخرى' }
-
   ];
   
   const STATE_TYPES = [
@@ -50,7 +46,6 @@ export default function ContractsList() {
     { id: '2', Status: 'منجز' },
   ];
 
-  // Quick date filter options
   const QUICK_DATE_FILTERS = [
     { value: '', label: 'جميع التواريخ' },
     { value: 'today', label: 'اليوم' },
@@ -63,24 +58,29 @@ export default function ContractsList() {
     { value: 'lastYear', label: 'العام الماضي' },
     { value: 'custom', label: 'تخصيص' }
   ];
-  const initialColumns = [
+const initialColumns = [
   { key: 'contractNumber', label: 'رقم العقد', visible: true },
   { key: 'contractName', label: 'اسم العقد', visible: true },
   { key: 'companyName', label: 'اسم الشركة', visible: true },
   { key: 'contractType', label: 'نوع العقد', visible: true },
   { key: 'status', label: 'حالة العقد', visible: true },
   { key: 'durationInDays', label: 'المدة المطلوبة (يوم)', visible: true },
-  { key: 'addedDays', label: 'المدة المضافة', visible: true },
-  { key: 'costChange', label: 'أوامر الغيار', visible: true },
-  { key: 'costPlanMins', label: 'كلف الادراج بوزارة التخطيط', visible: true },
-  { key: 'costToNatiBank', label: 'المرفوع للبنك الدولي', visible: true },
-  { key: 'totalCostPaid', label: 'المصروف التراكمي', visible: true },
-  { key: 'loanId', label: 'القرض المرتبط', visible: true },
-  { key: 'contractSigningDate', label: 'تاريخ توقيع العقد', visible: true },
-  { key: 'startDate', label: 'تاريخ المباشرة', visible: true },
-  { key: 'contractAmount', label: 'مبلغ العقد', visible: true },
+  { key: 'addedDays', label: 'المدة المضافة', visible: false },
+  { key: 'costChange', label: 'أوامر الغيار', visible: false },
+  { key: 'costPlanMins', label: 'كلف الادراج بوزارة التخطيط', visible: false },
+  { key: 'costToNatiBank', label: 'المرفوع للبنك الدولي', visible: false },
+  { key: 'totalCostPaid', label: 'المصروف التراكمي', visible: false },
+  { key: 'loanId', label: 'القرض المرتبط', visible: false },
+  { key: 'contractSigningDate', label: 'تاريخ توقيع العقد', visible: false },
+  { key: 'startDate', label: 'تاريخ المباشرة', visible: false },
+  { key: 'contractAmount', label: 'مبلغ العقد', visible: false },
+  { key: 'insuranceDeposits', label: 'الضمانات', visible: false },
+  { key: 'taxTrusts', label: 'الأمانات الضريبية', visible: false },
+  { key: 'penalties', label: 'الغرامات', visible: false },
+  { key: 'operationLoanCost', label: 'تكلفة تشغيل القرض', visible: false },
   { key: 'actions', label: 'الإجراءات', visible: true }
 ];
+
 const [columns, setColumns] = useState(initialColumns);
     const printReport = () => {
   window.print();
@@ -155,7 +155,6 @@ const handleCancel = () => {
     );
   };
 
-  // Function to get date range based on quick filter
   const getDateRangeFromQuickFilter = (filterType) => {
     const today = new Date();
     const todayStr = today.toISOString().split('T')[0];

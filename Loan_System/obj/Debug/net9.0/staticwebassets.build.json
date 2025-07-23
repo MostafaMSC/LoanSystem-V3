@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "G+5l2e0CXV4rKIKIeASkI10Ge3YX0htCAtc8dwgOdO4=",
+  "Hash": "SVS1bUGYLHGcDr0UY4bdNBHdtTte9TahqEoHWi4kuKE=",
   "Source": "Loan_System",
   "BasePath": "_content/Loan_System",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Loan_System\\wwwroot",
       "Source": "Loan_System",
-      "ContentRoot": "C:\\Loan-System-master\\loan_System\\wwwroot\\",
+      "ContentRoot": "C:\\Loan-System-master\\loan_system\\wwwroot\\",
       "BasePath": "_content/Loan_System",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.png",
+      "Identity": "C:\\Loan-System-master\\loan_system\\wwwroot\\uploads\\contracts\\4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.png",
       "SourceId": "Loan_System",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Loan-System-master\\loan_System\\wwwroot\\",
+      "ContentRoot": "C:\\Loan-System-master\\loan_system\\wwwroot\\",
       "BasePath": "_content/Loan_System",
       "RelativePath": "uploads/contracts/4d97aed7-e3fd-4f28-8a8d-81ec009e7c98#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -38,10 +38,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\contracts\\4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.png"
     },
     {
-      "Identity": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\93ae6f07-2a9c-4c60-a0ca-845543a93bae.png",
+      "Identity": "C:\\Loan-System-master\\loan_system\\wwwroot\\uploads\\contracts\\93ae6f07-2a9c-4c60-a0ca-845543a93bae.png",
       "SourceId": "Loan_System",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Loan-System-master\\loan_System\\wwwroot\\",
+      "ContentRoot": "C:\\Loan-System-master\\loan_system\\wwwroot\\",
       "BasePath": "_content/Loan_System",
       "RelativePath": "uploads/contracts/93ae6f07-2a9c-4c60-a0ca-845543a93bae#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -59,10 +59,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\contracts\\93ae6f07-2a9c-4c60-a0ca-845543a93bae.png"
     },
     {
-      "Identity": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\b12db548-efe4-4538-9815-54fa1de938e0.png",
+      "Identity": "C:\\Loan-System-master\\loan_system\\wwwroot\\uploads\\contracts\\b12db548-efe4-4538-9815-54fa1de938e0.png",
       "SourceId": "Loan_System",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Loan-System-master\\loan_System\\wwwroot\\",
+      "ContentRoot": "C:\\Loan-System-master\\loan_system\\wwwroot\\",
       "BasePath": "_content/Loan_System",
       "RelativePath": "uploads/contracts/b12db548-efe4-4538-9815-54fa1de938e0#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -80,10 +80,10 @@
       "OriginalItemSpec": "wwwroot\\uploads\\contracts\\b12db548-efe4-4538-9815-54fa1de938e0.png"
     },
     {
-      "Identity": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\f89b47f6-5d82-44e0-9204-ea948e1dc0a7.jpg",
+      "Identity": "C:\\Loan-System-master\\loan_system\\wwwroot\\uploads\\contracts\\f89b47f6-5d82-44e0-9204-ea948e1dc0a7.jpg",
       "SourceId": "Loan_System",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Loan-System-master\\loan_System\\wwwroot\\",
+      "ContentRoot": "C:\\Loan-System-master\\loan_system\\wwwroot\\",
       "BasePath": "_content/Loan_System",
       "RelativePath": "uploads/contracts/f89b47f6-5d82-44e0-9204-ea948e1dc0a7#[.{fingerprint}]?.jpg",
       "AssetKind": "All",
@@ -104,7 +104,7 @@
   "Endpoints": [
     {
       "Route": "uploads/contracts/4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.png",
-      "AssetFile": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.png",
+      "AssetFile": "C:\\Loan-System-master\\loan_system\\wwwroot\\uploads\\contracts\\4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -141,7 +141,7 @@
     },
     {
       "Route": "uploads/contracts/4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.yj9i10wxug.png",
-      "AssetFile": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.png",
+      "AssetFile": "C:\\Loan-System-master\\loan_system\\wwwroot\\uploads\\contracts\\4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -186,7 +186,7 @@
     },
     {
       "Route": "uploads/contracts/93ae6f07-2a9c-4c60-a0ca-845543a93bae.4em6cmlbey.png",
-      "AssetFile": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\93ae6f07-2a9c-4c60-a0ca-845543a93bae.png",
+      "AssetFile": "C:\\Loan-System-master\\loan_system\\wwwroot\\uploads\\contracts\\93ae6f07-2a9c-4c60-a0ca-845543a93bae.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -231,7 +231,7 @@
     },
     {
       "Route": "uploads/contracts/93ae6f07-2a9c-4c60-a0ca-845543a93bae.png",
-      "AssetFile": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\93ae6f07-2a9c-4c60-a0ca-845543a93bae.png",
+      "AssetFile": "C:\\Loan-System-master\\loan_system\\wwwroot\\uploads\\contracts\\93ae6f07-2a9c-4c60-a0ca-845543a93bae.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -268,7 +268,7 @@
     },
     {
       "Route": "uploads/contracts/b12db548-efe4-4538-9815-54fa1de938e0.png",
-      "AssetFile": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\b12db548-efe4-4538-9815-54fa1de938e0.png",
+      "AssetFile": "C:\\Loan-System-master\\loan_system\\wwwroot\\uploads\\contracts\\b12db548-efe4-4538-9815-54fa1de938e0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -305,7 +305,7 @@
     },
     {
       "Route": "uploads/contracts/b12db548-efe4-4538-9815-54fa1de938e0.qnv70wiy6n.png",
-      "AssetFile": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\b12db548-efe4-4538-9815-54fa1de938e0.png",
+      "AssetFile": "C:\\Loan-System-master\\loan_system\\wwwroot\\uploads\\contracts\\b12db548-efe4-4538-9815-54fa1de938e0.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -350,7 +350,7 @@
     },
     {
       "Route": "uploads/contracts/f89b47f6-5d82-44e0-9204-ea948e1dc0a7.jpg",
-      "AssetFile": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\f89b47f6-5d82-44e0-9204-ea948e1dc0a7.jpg",
+      "AssetFile": "C:\\Loan-System-master\\loan_system\\wwwroot\\uploads\\contracts\\f89b47f6-5d82-44e0-9204-ea948e1dc0a7.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -387,7 +387,7 @@
     },
     {
       "Route": "uploads/contracts/f89b47f6-5d82-44e0-9204-ea948e1dc0a7.pfhv6q8oks.jpg",
-      "AssetFile": "C:\\Loan-System-master\\loan_System\\wwwroot\\uploads\\contracts\\f89b47f6-5d82-44e0-9204-ea948e1dc0a7.jpg",
+      "AssetFile": "C:\\Loan-System-master\\loan_system\\wwwroot\\uploads\\contracts\\f89b47f6-5d82-44e0-9204-ea948e1dc0a7.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {

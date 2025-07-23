@@ -37,7 +37,17 @@
         [Precision(18, 2)]
         public decimal? OperationLoanCost { get; set; }
         [Precision(18, 2)]
-        public decimal? TaxesAndBlockedmoney { get; set; }
+        // التأمينات
+        public decimal? InsuranceDeposits { get; set; }
+
+        // الأمانات الضريبية
+        public decimal? TaxTrusts { get; set; }
+
+        // الغرامات
+        public decimal? Penalties { get; set; }
+
+        // أمانات أخرى
+        public decimal? OtherTrusts { get; set; }
         
         public ICollection<CashPaidPayments> CashPaid { get; set; } = new List<CashPaidPayments>();
         public ICollection<PrivateMoneyPayments> PrivateMoneyPaid { get; set; } = new List<PrivateMoneyPayments>();

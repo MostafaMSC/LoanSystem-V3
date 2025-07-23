@@ -28,6 +28,7 @@ export default function AddContract({ onClose }) {
     TaxesAndBlockedmoney: null,
     PrivateMoneyPaid: null,
     Notes: '',
+    CostChange: null,
   };
 const navigate = useNavigate();
   const numericFields = [
@@ -44,6 +45,7 @@ const navigate = useNavigate();
     'CashPaid',
     'TaxesAndBlockedmoney',
     'PrivateMoneyPaid',
+    'CostChange',
   ];
 
   const dateFields = ['ContractSigningDate', 'StartDate', 'CompleteDate'];
@@ -308,7 +310,12 @@ const navigate = useNavigate();
                 placeholder="الأيام الإضافية"
               />
             </div>
-
+            <div className="col-md-6">
+              <label className="form-label">اوامر الغيار:</label>
+              <input type="number" name="CostChange" className="form-control"
+                value={formData.CostChange ?? ''} onChange={handleChange} required
+                min="0" step="0.01" placeholder="0.00" />
+            </div>
             {/* Notes Section */}
             <div className="col-12 mt-4">
               <h4 className="text-primary border-bottom pb-2">ملاحظات إضافية</h4>

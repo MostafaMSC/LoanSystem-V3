@@ -22,7 +22,18 @@ public class ContractCreateDto
     public decimal? CostToNatiBank { get; set; }
     public decimal? TotalCostPaid { get; set; }
     public decimal? OperationLoanCost { get; set; }
-    public decimal? TaxesAndBlockedmoney { get; set; }
+        // التأمينات
+    public decimal? InsuranceDeposits { get; set; }
+
+    // الأمانات الضريبية
+    public decimal? TaxTrusts { get; set; }
+
+    // الغرامات
+    public decimal? Penalties { get; set; }
+
+    // أمانات أخرى
+    public decimal? OtherTrusts { get; set; }
+
     public string Notes { get; set; } = string.Empty;
 
     public List<PaymentDto>? CashPaid { get; set; } = new List<PaymentDto>();

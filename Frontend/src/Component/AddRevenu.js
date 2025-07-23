@@ -54,33 +54,36 @@ export default function AddRevenu({ contractId, onClose }) {
   const [showPaymentsPrivate, setShowPaymentsPrivate] = useState(false);
   const [cashPayments, setCashPayments] = useState([]);
   const [privatePayments, setPrivatePayments] = useState([]);
-const [previousPrivatePaymentsLoading, setPreviousPrivatePaymentsLoading] = useState(false);
-const [previousPrivatePaymentsError, setPreviousPrivatePaymentsError] = useState('');
+  const [previousPrivatePaymentsLoading, setPreviousPrivatePaymentsLoading] = useState(false);
+  const [previousPrivatePaymentsError, setPreviousPrivatePaymentsError] = useState('');
 
-  const [formData, setFormData] = useState({
-    ContractNumber: '',
-    ContractName: '',
-    ContractType: '',
-    CompanyName: '',
-    Status: '',
-    LoanId: '',
-    ContractSigningDate: '',
-    StartDate: '',
-    CompleteDate: '',
-    DurationInDays: '',
-    AddedDays: '',
-    ContractAmount: '',
-    CostChange: '',
-    CostPlanMins: '',
-    CostAfterChange: '',
-    CostToNatiBank: '',
-    TotalCostPaid: '',
-    OperationLoanCost: '',
-    CashPaid: '',
-    TaxesAndBlockedmoney: '',
-    PrivateMoneyPaid: '',
-    Notes: '',
-  });
+ const [formData, setFormData] = useState({
+  ContractNumber: '',
+  ContractName: '',
+  ContractType: '',
+  CompanyName: '',
+  Status: '',
+  LoanId: '',
+  ContractSigningDate: '',
+  StartDate: '',
+  CompleteDate: '',
+  DurationInDays: '',
+  AddedDays: '',
+  ContractAmount: '',
+  CostChange: '',
+  CostPlanMins: '',
+  CostAfterChange: '',
+  CostToNatiBank: '',
+  TotalCostPaid: '',
+  Notes: '',
+  OperationLoanCost: '',
+  // ✅ الحقول الجديدة
+  InsuranceDeposits: '',
+  TaxTrusts: '',
+  Penalties: '',
+  OtherTrusts: ''
+});
+
 
   const [validationErrors, setValidationErrors] = useState({});
 
@@ -338,17 +341,22 @@ const fetchPreviousPrivatePayments = async () => {
 
     if (!formData.ContractNumber.trim()) errors.ContractNumber = 'رقم العقد مطلوب';
     if (!formData.ContractName.trim()) errors.ContractName = 'اسم العقد مطلوب';
+console.log(errors);
 
     // Validate cash payments
     cashPayments.forEach((payment, index) => {
       if (payment.Amount && (isNaN(Number(payment.Amount)) || Number(payment.Amount) < 0)) {
         errors[`cashPayment_${index}`] = 'يجب أن يكون المبلغ رقمية وغير سالبة';
+        console.log(errors);
+
       }
     });
 
      privatePayments.forEach((payment, index) => {
     if (payment.Amount && (isNaN(Number(payment.Amount)) || Number(payment.Amount) < 0)) {
       errors[`privatePayment_${index}`] = 'يجب أن يكون المبلغ رقمية وغير سالبة';
+      console.log(errors);
+
     }
   });
     // Numeric fields validation (should be numbers >= 0)
@@ -359,8 +367,6 @@ const fetchPreviousPrivatePayments = async () => {
       'CostToNatiBank',
       'TotalCostPaid',
       'OperationLoanCost',
-      'TaxesAndBlockedmoney',
-      'PrivateMoneyPaid',
       'DurationInDays',
       'AddedDays',
       'CostChange'
@@ -368,6 +374,8 @@ const fetchPreviousPrivatePayments = async () => {
     numericFields.forEach((field) => {
       if (formData[field] && (isNaN(Number(formData[field])) || Number(formData[field]) < 0)) {
         errors[field] = 'يجب أن تكون القيمة رقمية وغير سالبة';
+        console.log(errors);
+
       }
     });
 
@@ -377,6 +385,8 @@ const fetchPreviousPrivatePayments = async () => {
       const complete = new Date(formData.CompleteDate);
       if (start > complete) {
         errors.CompleteDate = 'تاريخ الإنجاز يجب أن يكون بعد تاريخ المباشرة';
+        console.log(errors);
+
       }
     }
 
@@ -561,7 +571,7 @@ if (!paymentId) return;
     <div className="d-flex flex-column min-vh-100 ">
       <main className="flex-fill container my-4">
         <div className="card contract-form-container">
-          <div className="card-header d-flex justify-content-between align-items-center">
+          <div className="card-header d-flex justify-content-center align-items-center">
             <h2 className="mb-0">{isEditMode ? 'البيانات المالية للعقد' : 'إضافة عقد جديد'}</h2>
           </div>
           <div className="card-body">
@@ -646,12 +656,12 @@ if (!paymentId) return;
                   <h4 className="text-primary border-bottom pb-2">بيانات الايرادات</h4>
                 </div>
                 
-                {renderInput('اوامر الغيار', 'CostChange', 'number')}
+                {renderInput('اوامر الغيار', 'CostChange', 'number',false,{ readOnly: true })}
                 {renderInput('كلف الادراج في وزارة التخطيط', 'CostPlanMins', 'number')}
-                {renderInput('كلف العقد بعد اضافة اوامر تغير العمل', 'CostAfterChange', 'number', false, { readOnly: true })}
-                {renderInput('المرفوع للبنك الدولي', 'CostToNatiBank', 'number')}
+                {renderInput('كلف العقد بعد اوامر الغيار', 'CostAfterChange', 'number', false, { readOnly: true })}
+                {renderInput('المبالغ المصروفة للشركة من قبل البنك الدولي', 'CostToNatiBank', 'number')}
                 {renderInput('المصروف التراكمي', 'TotalCostPaid', 'number')}
-                {renderInput('المبالغ المصروفة كسلفة تشغيلية 10 %', 'OperationLoanCost', 'number')}
+                {renderInput('المصروف كسلفة تشغيلية 10 %', 'OperationLoanCost', 'number')}
 
 
 <div className='border-bottom d-flex justify-content-between'>
@@ -1039,10 +1049,12 @@ if (!paymentId) return;
 )}
                   
                 </div>
-                {renderInput('التامينات المحجوزة (10% والضريبة) والغرامات', 'TaxesAndBlockedmoney', 'number')}
-                {renderInput('المبالغ المطلوقة من الحساب الخاص', 'PrivateMoneyPaid', 'number')}
+{renderInput('تأمينات', 'InsuranceDeposits', 'number')}
+{renderInput('أمانات ضريبية', 'TaxTrusts', 'number')}
+{renderInput('غرامات', 'Penalties', 'number')}
+{renderInput('أمانات أخرى', 'OtherTrusts', 'number')}
 
-                <div className="col-12 mb-3">
+                <div className="col-12">
                   <label className="form-label">ملاحظات</label>
                   <textarea
                     name="Notes"
@@ -1054,7 +1066,7 @@ if (!paymentId) return;
                 </div>
               </div>
 
-              <div className="d-flex justify-content-between mt-4">
+              <div className="d-flex justify-content-between mt-4 gap-5">
                 <button
                   type="submit"
                   className="btn btn-primary"

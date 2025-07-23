@@ -71,7 +71,14 @@ export default function EditContract({ contractId, onClose  }) {
   TaxesAndBlockedmoney: '',
   PrivateMoneyPaid: '',
   Notes: '',
+
+  // ✅ الحقول الجديدة
+  InsuranceDeposits: '',
+  TaxTrusts: '',
+  Penalties: '',
+  OtherTrusts: ''
 });
+
 
   const [validationErrors, setValidationErrors] = useState({});
 
@@ -167,18 +174,25 @@ export default function EditContract({ contractId, onClose  }) {
 
     // Numeric fields validation (should be numbers >= 0)
     const numericFields = [
-      'ContractAmount',
-      'CostPlanMins',
-      'CostAfterChange',
-      'CostToNatiBank',
-      'TotalCostPaid',
-      'OperationLoanCost',
-      'CashPaid',
-      'TaxesAndBlockedmoney',
-      'PrivateMoneyPaid',
-      'DurationInDays',
-      'AddedDays',
-    ];
+  'ContractAmount',
+  'CostPlanMins',
+  'CostAfterChange',
+  'CostToNatiBank',
+  'TotalCostPaid',
+  'OperationLoanCost',
+  'CashPaid',
+  'TaxesAndBlockedmoney',
+  'PrivateMoneyPaid',
+  'DurationInDays',
+  'AddedDays',
+
+  // ✅ الحقول الجديدة
+  'InsuranceDeposits',
+  'TaxTrusts',
+  'Penalties',
+  'OtherTrusts'
+];
+
     numericFields.forEach((field) => {
       if (formData[field] && (isNaN(Number(formData[field])) || Number(formData[field]) < 0)) {
         errors[field] = 'يجب أن تكون القيمة رقمية وغير سالبة';
@@ -363,6 +377,11 @@ export default function EditContract({ contractId, onClose  }) {
                 {renderInput('الأيام المضافة', 'AddedDays', 'number')}
 
                 {renderInput('مبلغ العقد', 'ContractAmount', 'number')}
+                {renderInput('الضمانات', 'InsuranceDeposits', 'number')}
+                {renderInput('الأمانات الضريبية', 'TaxTrusts', 'number')}
+                {renderInput('الغرامات', 'Penalties', 'number')}
+                {renderInput('الأمانات الأخرى', 'OtherTrusts', 'number')}
+
 
                 <div className="col-12 mb-3">
                   <label className="form-label">ملاحظات</label>

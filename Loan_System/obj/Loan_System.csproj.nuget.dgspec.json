@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Loan-System-master\\loan_System\\Loan_System.csproj": {}
+    "C:\\Loan-System-master\\Loan_System\\Loan_System.csproj": {}
   },
   "projects": {
-    "C:\\Loan-System-master\\loan_System\\Loan_System.csproj": {
+    "C:\\Loan-System-master\\Loan_System\\Loan_System.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Loan-System-master\\loan_System\\Loan_System.csproj",
+        "projectUniqueName": "C:\\Loan-System-master\\Loan_System\\Loan_System.csproj",
         "projectName": "Loan_System",
-        "projectPath": "C:\\Loan-System-master\\loan_System\\Loan_System.csproj",
+        "projectPath": "C:\\Loan-System-master\\Loan_System\\Loan_System.csproj",
         "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
-        "outputPath": "C:\\Loan-System-master\\loan_System\\obj\\",
+        "outputPath": "C:\\Loan-System-master\\Loan_System\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

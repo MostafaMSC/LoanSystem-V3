@@ -39,7 +39,10 @@ public class ContractService : IConract
                 CostToNatiBank = dto.CostToNatiBank,
                 TotalCostPaid = dto.TotalCostPaid,
                 OperationLoanCost = dto.OperationLoanCost,
-                TaxesAndBlockedmoney = dto.TaxesAndBlockedmoney,
+                InsuranceDeposits = dto.InsuranceDeposits,
+                TaxTrusts = dto.TaxTrusts,
+                Penalties = dto.Penalties,
+                OtherTrusts = dto.OtherTrusts,
                 Notes = dto.Notes,
                 CashPaid = new List<CashPaidPayments>(),
                 PrivateMoneyPaid = new List<PrivateMoneyPayments>()
@@ -151,7 +154,10 @@ public class ContractService : IConract
     contract.StartDate = updatedContract.StartDate;
     contract.TotalCostPaid = updatedContract.TotalCostPaid;
     contract.OperationLoanCost = updatedContract.OperationLoanCost;
-    contract.TaxesAndBlockedmoney = updatedContract.TaxesAndBlockedmoney;
+    contract.InsuranceDeposits = updatedContract.InsuranceDeposits;
+    contract.TaxTrusts = updatedContract.TaxTrusts;
+    contract.Penalties = updatedContract.Penalties;
+    contract.OtherTrusts = updatedContract.OtherTrusts;
     contract.Status = updatedContract.Status;
 
     // Handle cash payments - check both possible property names from frontend
@@ -246,7 +252,6 @@ public class ContractService : IConract
         _context.CashPaidPayments.RemoveRange(contract.CashPaid);
         _context.PrivateMoneyPayments.RemoveRange(contract.PrivateMoneyPaid);
         _context.ContractDocuments.RemoveRange(contract.Documents);
-        
         _context.ContractTable.Remove(contract);
         await _context.SaveChangesAsync();
         return "Contract deleted successfully.";

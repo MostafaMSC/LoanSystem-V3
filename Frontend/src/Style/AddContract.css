@@ -4,6 +4,7 @@
   background-color: #fff;
   padding: 2rem;
   border-radius: 10px;
+  
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -21,6 +22,7 @@
 .contract-form-container label {
   display: block;
   margin-bottom: 0.5rem;
+  font-size: small;
   font-weight: bold;
   color: #333;
 }
@@ -56,7 +58,7 @@
 /* RTL support for Arabic */
 .contract-form-container {
   direction: rtl;
-  text-align: right;
+  text-align: center;
 }
 
 /* Alert styling enhancements */
