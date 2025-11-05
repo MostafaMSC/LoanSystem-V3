@@ -1,0 +1,8 @@
+let loginMessageElement = document.querySelector('[data-itemtype="login_message"]');
+if (loginMessageElement) {
+document.getElementById("username").value = loginMessageElement.textContent.trim();
+}
+
+
+
+                    document.getElementById('value_cont_name_1').value = document.getElementById("server_response").textContent;

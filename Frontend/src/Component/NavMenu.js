@@ -72,12 +72,13 @@ export default function NavBar() {
         </NavLink>
       </div>
 
-      <ul className="d-flex flex-row-reverse gap-3 list-unstyled mb-0 align-items-center">
+      <ul className="d-flex flex-row-reverse gap-3 list-unstyled mb-0 align-items-center fw-bold">
         <li>{renderNavItem("/dashboard", "الصفحة الرئيسية")}</li>
         <li>{renderNavItem("/contracts", " العقود")}</li>
         <li>{renderNavItem("/Loans", " القروض")}</li>
         <li>{renderNavItem("/RevenueList", " الايرادات")}</li>
         <li>{renderNavItem("/AdminPanel", "المستخدمين")}</li>
+        {/* <li>{renderNavItem("/AdminDashboard", "لوحة التحكم")}</li> */}
       </ul>
 
       <div className="d-flex align-items-center gap-2">

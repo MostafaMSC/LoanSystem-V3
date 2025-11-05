@@ -22,17 +22,14 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityR
         public DbSet<LoanModule> LoanTable { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
         
-        // Budget/Revenue tables
         public DbSet<RevenueInfoModule> RevenueInfoTable { get; set; }
         public DbSet<DepartmentModule> DepartmentTable { get; set; }
-        public DbSet<BudgetRevenue> BudgetRevenueTable { get; set; } // Added missing DbSet
+        public DbSet<BudgetRevenue> BudgetRevenueTable { get; set; } 
         public DbSet<ContractDocument> ContractDocuments { get; set; }
         public DbSet<PrivateMoneyPayments> PrivateMoneyPayments { get; set; }
 
         public DbSet<CashPaidPayments> CashPaidPayments { get; set; }
         public DbSet<NonSovereignRevenues> NonSovereignRevenues { get; set; }
-
-
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             var username = _httpContextAccessor.HttpContext?.User?.Identity?.Name ?? "System";
@@ -86,7 +83,6 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityR
             modelBuilder.Entity<BudgetRevenue>()
                 .HasIndex(br => br.RevenueId)
                 .HasDatabaseName("IX_BudgetRevenue_RevenueId");
-
 
         }
     }

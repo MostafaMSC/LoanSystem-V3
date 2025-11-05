@@ -69,7 +69,10 @@ export default function Cards() {
           </navlink>
         </div>
                 <div className="ag-courses_item">
-          <navlink to="#" className="ag-courses-item_link">
+          <navlink to="/Department"
+          onClick={() => navigate('/Department')}
+          style={{ cursor: 'pointer'}}
+          className="ag-courses-item_link">
             <div className="ag-courses-item_bg"></div>
             <div className="ag-courses-item_title">
               التراميز

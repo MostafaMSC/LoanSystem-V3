@@ -136,6 +136,7 @@ export default function AddRevenueCosts() {
             continue;
           }
 
+          // Fixed: Include RevenueInfo property with the complete revenue object
           const submissionData = {
             RevenueId: parseInt(revenue.id),
             Department: departmentName?.trim() || '',
@@ -143,6 +144,15 @@ export default function AddRevenueCosts() {
             Year: parseInt(selectedYear),
             Month: parseInt(selectedMonth),
             Notes: "تمت الإضافة من الواجهة",
+            // Include the RevenueInfo navigation property
+            RevenueInfo: {
+              id: parseInt(revenue.id),
+              revenueName: revenue.revenueName,
+              // Add other properties if they exist in your revenue object
+              revenueCode: revenue.revenueCode || null,
+              description: revenue.description || null,
+              // Add any other properties that exist in your RevenueInfo model
+            }
           };
 
           console.log(`\n--- Submitting for ${revenue.revenueName} ---`);
@@ -184,7 +194,7 @@ export default function AddRevenueCosts() {
         
         toast({
           title: 'تمت العملية بنجاح',
-          description: `تمت إضافة جميع التكاليف بنجاح )`,
+          description: `تمت إضافة جميع التكاليف بنجاح`,
           type: 'success'
         });
 

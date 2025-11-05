@@ -385,7 +385,7 @@ const numericFields = [
                 className="form-control"
                 value={formData.gpS_X ?? ''}
                 onChange={handleChange}
-                placeholder="例: 33.3152"
+                placeholder=" 33.3152"
               />
             </div>
 
@@ -398,7 +398,7 @@ const numericFields = [
                 className="form-control"
                 value={formData.gpS_Y ?? ''}
                 onChange={handleChange}
-                placeholder="例: 44.3661"
+                placeholder=" 44.3661"
               />
             </div>
 

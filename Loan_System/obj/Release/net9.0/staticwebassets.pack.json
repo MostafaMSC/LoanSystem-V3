@@ -1,0 +1,893 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\approved.png",
+      "PackagePath": "staticwebassets\\Images\\approved.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\bank.png",
+      "PackagePath": "staticwebassets\\Images\\bank.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\calendar.png",
+      "PackagePath": "staticwebassets\\Images\\calendar.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\checked.png",
+      "PackagePath": "staticwebassets\\Images\\checked.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\control.png",
+      "PackagePath": "staticwebassets\\Images\\control.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\edit.png",
+      "PackagePath": "staticwebassets\\Images\\edit.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\eye-care.png",
+      "PackagePath": "staticwebassets\\Images\\eye-care.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\folder.png",
+      "PackagePath": "staticwebassets\\Images\\folder.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\growth.png",
+      "PackagePath": "staticwebassets\\Images\\growth.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\increase.png",
+      "PackagePath": "staticwebassets\\Images\\increase.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\list.png",
+      "PackagePath": "staticwebassets\\Images\\list.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\loading.png",
+      "PackagePath": "staticwebassets\\Images\\loading.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\loan.png",
+      "PackagePath": "staticwebassets\\Images\\loan.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\management.png",
+      "PackagePath": "staticwebassets\\Images\\management.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\next.png",
+      "PackagePath": "staticwebassets\\Images\\next.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\notes.png",
+      "PackagePath": "staticwebassets\\Images\\notes.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\power.gif",
+      "PackagePath": "staticwebassets\\Images\\power.gif"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\power.png",
+      "PackagePath": "staticwebassets\\Images\\power.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\previous.png",
+      "PackagePath": "staticwebassets\\Images\\previous.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\reload.png",
+      "PackagePath": "staticwebassets\\Images\\reload.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\report.png",
+      "PackagePath": "staticwebassets\\Images\\report.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\reporttotal.png",
+      "PackagePath": "staticwebassets\\Images\\reporttotal.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\search.png",
+      "PackagePath": "staticwebassets\\Images\\search.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\sign.jpg",
+      "PackagePath": "staticwebassets\\Images\\sign.jpg"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\signing.png",
+      "PackagePath": "staticwebassets\\Images\\signing.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\statistics.png",
+      "PackagePath": "staticwebassets\\Images\\statistics.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\Images\\trash.png",
+      "PackagePath": "staticwebassets\\Images\\trash.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\asset-manifest.json",
+      "PackagePath": "staticwebassets\\asset-manifest.json"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\logo192.png",
+      "PackagePath": "staticwebassets\\logo192.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\logo512.png",
+      "PackagePath": "staticwebassets\\logo512.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\manifest.json",
+      "PackagePath": "staticwebassets\\manifest.json"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\robots.txt",
+      "PackagePath": "staticwebassets\\robots.txt"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\101.e05d21ab.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\101.e05d21ab.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\101.e05d21ab.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\101.e05d21ab.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\136.e05d21ab.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\136.e05d21ab.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\136.e05d21ab.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\136.e05d21ab.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\147.af1561d6.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\147.af1561d6.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\147.af1561d6.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\147.af1561d6.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\256.e05d21ab.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\256.e05d21ab.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\256.e05d21ab.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\256.e05d21ab.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\361.e25db1a7.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\361.e25db1a7.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\361.e25db1a7.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\361.e25db1a7.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\402.e05d21ab.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\402.e05d21ab.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\402.e05d21ab.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\402.e05d21ab.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\418.66f6f248.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\418.66f6f248.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\418.66f6f248.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\418.66f6f248.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\446.af1561d6.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\446.af1561d6.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\446.af1561d6.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\446.af1561d6.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\488.de5065dc.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\488.de5065dc.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\488.de5065dc.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\488.de5065dc.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\49.11c9ea10.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\49.11c9ea10.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\49.11c9ea10.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\49.11c9ea10.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\491.b8218c29.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\491.b8218c29.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\491.b8218c29.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\491.b8218c29.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\50.af1561d6.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\50.af1561d6.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\50.af1561d6.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\50.af1561d6.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\516.af1561d6.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\516.af1561d6.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\516.af1561d6.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\516.af1561d6.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\561.c20827cb.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\561.c20827cb.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\561.c20827cb.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\561.c20827cb.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\717.0e028503.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\717.0e028503.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\717.0e028503.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\717.0e028503.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\768.e25db1a7.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\768.e25db1a7.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\768.e25db1a7.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\768.e25db1a7.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\885.e05d21ab.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\885.e05d21ab.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\885.e05d21ab.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\885.e05d21ab.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\903.1eecc88d.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\903.1eecc88d.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\903.1eecc88d.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\903.1eecc88d.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\973.e05d21ab.chunk.css",
+      "PackagePath": "staticwebassets\\static\\css\\973.e05d21ab.chunk.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\973.e05d21ab.chunk.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\973.e05d21ab.chunk.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\main.468057df.css",
+      "PackagePath": "staticwebassets\\static\\css\\main.468057df.css"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\css\\main.468057df.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\main.468057df.css.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\101.19b9522c.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\101.19b9522c.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\101.19b9522c.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\101.19b9522c.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\101.506ce5de.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\101.506ce5de.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\101.506ce5de.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\101.506ce5de.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\101.d273c85f.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\101.d273c85f.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\101.d273c85f.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\101.d273c85f.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\136.026ca6e8.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\136.026ca6e8.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\136.026ca6e8.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\136.026ca6e8.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\136.6cac806c.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\136.6cac806c.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\136.6cac806c.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\136.6cac806c.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\136.b721bdcd.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\136.b721bdcd.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\136.b721bdcd.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\136.b721bdcd.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\147.17905b61.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\147.17905b61.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\147.17905b61.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\147.17905b61.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\147.2e72a354.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\147.2e72a354.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\147.2e72a354.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\147.2e72a354.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\147.da561eee.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\147.da561eee.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\147.da561eee.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\147.da561eee.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\213.ee9f9653.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\213.ee9f9653.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\213.ee9f9653.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\213.ee9f9653.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\256.4a958315.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\256.4a958315.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\256.4a958315.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\256.4a958315.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\256.5bd16b8a.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\256.5bd16b8a.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\256.5bd16b8a.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\256.5bd16b8a.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\256.a47ba83d.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\256.a47ba83d.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\256.a47ba83d.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\256.a47ba83d.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\288.20783e07.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\288.20783e07.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\288.20783e07.chunk.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\static\\js\\288.20783e07.chunk.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\288.20783e07.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\288.20783e07.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\361.4ae9daa1.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\361.4ae9daa1.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\361.4ae9daa1.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\361.4ae9daa1.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\361.6602ec88.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\361.6602ec88.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\361.6602ec88.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\361.6602ec88.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\361.d59390c3.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\361.d59390c3.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\361.d59390c3.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\361.d59390c3.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\381.43391649.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\381.43391649.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\381.43391649.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\381.43391649.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\389.2b36068a.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\389.2b36068a.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\389.2b36068a.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\389.2b36068a.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\402.2357dcce.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\402.2357dcce.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\402.2357dcce.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\402.2357dcce.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\402.bce47429.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\402.bce47429.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\402.bce47429.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\402.bce47429.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\402.de8cef7f.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\402.de8cef7f.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\402.de8cef7f.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\402.de8cef7f.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\418.a19d35c3.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\418.a19d35c3.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\418.a19d35c3.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\418.a19d35c3.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\446.01600989.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\446.01600989.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\446.01600989.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\446.01600989.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\446.1a246e4f.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\446.1a246e4f.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\446.1a246e4f.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\446.1a246e4f.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\446.ab3de47f.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\446.ab3de47f.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\446.ab3de47f.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\446.ab3de47f.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\484.a5a1e15a.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\484.a5a1e15a.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\484.a5a1e15a.chunk.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\static\\js\\484.a5a1e15a.chunk.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\484.a5a1e15a.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\484.a5a1e15a.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\488.3d6d1007.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\488.3d6d1007.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\488.3d6d1007.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\488.3d6d1007.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\488.4ce948d7.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\488.4ce948d7.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\488.4ce948d7.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\488.4ce948d7.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\488.f649c362.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\488.f649c362.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\488.f649c362.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\488.f649c362.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\49.2f2d47e3.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\49.2f2d47e3.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\49.2f2d47e3.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\49.2f2d47e3.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\50.43731d39.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\50.43731d39.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\50.43731d39.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\50.43731d39.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\50.584f8695.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\50.584f8695.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\50.584f8695.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\50.584f8695.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\50.e9549ed8.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\50.e9549ed8.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\50.e9549ed8.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\50.e9549ed8.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\516.9f46e272.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\516.9f46e272.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\516.9f46e272.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\516.9f46e272.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\516.a2230374.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\516.a2230374.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\516.a2230374.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\516.a2230374.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\516.e2cbf735.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\516.e2cbf735.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\516.e2cbf735.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\516.e2cbf735.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\561.333ab789.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\561.333ab789.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\561.333ab789.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\561.333ab789.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\561.9aed66c9.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\561.9aed66c9.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\561.9aed66c9.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\561.9aed66c9.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\561.f0ab4ca1.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\561.f0ab4ca1.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\561.f0ab4ca1.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\561.f0ab4ca1.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\64.f4674d71.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\64.f4674d71.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\64.f4674d71.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\64.f4674d71.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\717.0ae91fa1.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\717.0ae91fa1.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\717.0ae91fa1.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\717.0ae91fa1.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\717.6ff99e66.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\717.6ff99e66.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\717.6ff99e66.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\717.6ff99e66.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\717.75552822.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\717.75552822.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\717.75552822.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\717.75552822.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\726.3f7853f2.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\726.3f7853f2.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\726.3f7853f2.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\726.3f7853f2.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\726.bb8cafb4.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\726.bb8cafb4.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\726.bb8cafb4.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\726.bb8cafb4.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\726.fe4cfc50.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\726.fe4cfc50.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\726.fe4cfc50.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\726.fe4cfc50.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\768.cc7fbd6c.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\768.cc7fbd6c.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\768.cc7fbd6c.chunk.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\static\\js\\768.cc7fbd6c.chunk.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\768.cc7fbd6c.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\768.cc7fbd6c.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\858.00c99199.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\858.00c99199.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\858.00c99199.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\858.00c99199.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\885.211a0590.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\885.211a0590.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\885.211a0590.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\885.211a0590.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\885.91af11fa.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\885.91af11fa.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\885.91af11fa.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\885.91af11fa.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\885.9f72bb62.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\885.9f72bb62.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\885.9f72bb62.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\885.9f72bb62.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\894.28209be5.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\894.28209be5.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\894.28209be5.chunk.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\static\\js\\894.28209be5.chunk.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\894.28209be5.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\894.28209be5.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\903.432a77d6.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\903.432a77d6.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\903.432a77d6.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\903.432a77d6.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\903.9c56d702.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\903.9c56d702.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\903.9c56d702.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\903.9c56d702.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\903.fb786295.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\903.fb786295.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\903.fb786295.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\903.fb786295.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\928.bd95086d.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\928.bd95086d.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\928.bd95086d.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\928.bd95086d.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\932.6c9c1c50.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\932.6c9c1c50.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\932.6c9c1c50.chunk.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\static\\js\\932.6c9c1c50.chunk.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\932.6c9c1c50.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\932.6c9c1c50.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\937.c0f30a35.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\937.c0f30a35.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\937.c0f30a35.chunk.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\static\\js\\937.c0f30a35.chunk.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\937.c0f30a35.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\937.c0f30a35.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\973.08d85fca.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\973.08d85fca.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\973.08d85fca.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\973.08d85fca.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\973.0f876bf5.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\973.0f876bf5.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\973.0f876bf5.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\973.0f876bf5.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\973.34a135ee.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\973.34a135ee.chunk.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\973.34a135ee.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\973.34a135ee.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\main.0cf2443b.js",
+      "PackagePath": "staticwebassets\\static\\js\\main.0cf2443b.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\main.0cf2443b.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\static\\js\\main.0cf2443b.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\main.0cf2443b.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\main.0cf2443b.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\main.a9e58208.js",
+      "PackagePath": "staticwebassets\\static\\js\\main.a9e58208.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\main.a9e58208.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\static\\js\\main.a9e58208.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\main.a9e58208.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\main.a9e58208.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\main.c1d71c61.js",
+      "PackagePath": "staticwebassets\\static\\js\\main.c1d71c61.js"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\main.c1d71c61.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\static\\js\\main.c1d71c61.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\static\\js\\main.c1d71c61.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\main.c1d71c61.js.map"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\uploads\\contracts\\4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.png",
+      "PackagePath": "staticwebassets\\uploads\\contracts\\4d97aed7-e3fd-4f28-8a8d-81ec009e7c98.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\uploads\\contracts\\93ae6f07-2a9c-4c60-a0ca-845543a93bae.png",
+      "PackagePath": "staticwebassets\\uploads\\contracts\\93ae6f07-2a9c-4c60-a0ca-845543a93bae.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\uploads\\contracts\\b12db548-efe4-4538-9815-54fa1de938e0.png",
+      "PackagePath": "staticwebassets\\uploads\\contracts\\b12db548-efe4-4538-9815-54fa1de938e0.png"
+    },
+    {
+      "Id": "C:\\Loan-System-master\\Loan_System\\wwwroot\\uploads\\contracts\\f89b47f6-5d82-44e0-9204-ea948e1dc0a7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\contracts\\f89b47f6-5d82-44e0-9204-ea948e1dc0a7.jpg"
+    },
+    {
+      "Id": "obj\\Release\\net9.0\\staticwebassets\\msbuild.Loan_System.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Release\\net9.0\\staticwebassets\\msbuild.Loan_System.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net9.0\\staticwebassets\\msbuild.build.Loan_System.props",
+      "PackagePath": "build\\Loan_System.props"
+    },
+    {
+      "Id": "obj\\Release\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.Loan_System.props",
+      "PackagePath": "buildMultiTargeting\\Loan_System.props"
+    },
+    {
+      "Id": "obj\\Release\\net9.0\\staticwebassets\\msbuild.buildTransitive.Loan_System.props",
+      "PackagePath": "buildTransitive\\Loan_System.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

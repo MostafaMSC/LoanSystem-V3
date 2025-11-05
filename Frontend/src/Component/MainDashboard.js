@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoins } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
 import "../Style/LoginForm.css";
 import NavMenu from './NavMenu'
 import Cards from './Cards'

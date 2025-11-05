@@ -405,10 +405,11 @@ export default function EditLoan() {
                   onChange={handleChange}
                   disabled={isSaving}
                 >
-                  <option value="">اختر نوع المشروع</option>
-                  <option value="1">نوع 1</option>
-                  <option value="2">نوع 2</option>
-                  <option value="3">نوع 3</option>
+                  <option value={0}>-- اختر نوع المشروع --</option>
+                <option value={1}>مستمر</option>
+                <option value={2}>جديد</option>
+                <option value={3}>مستحدث</option>
+                <option value={4}>إعادة ادراج</option>
                 </select>
               </div>
               
@@ -444,9 +445,9 @@ export default function EditLoan() {
               </div>
               
               {renderInput('سنة الإدراج', 'PutYear', 'number')}
-              {renderInput('عدد السنوات لإكمال المشروع', 'NoYearTOComplete', 'number')}
-              {renderInput('سنة الانتهاء الفعلية', 'ActualFinishYear', 'number')}
-              {renderInput('الميزانية المعدلة', 'ChangedBudget', 'number')}
+              {renderInput('عدد السنوات التنفيذ للمشروع', 'NoYearTOComplete', 'number')}
+              {renderInput('تاريخ الانجاز الفعلي للمشروع', 'ActualFinishYear', 'number')}
+              {renderInput('مقدار التغيير في الكلفة الكلية للمشروع', 'ChangedBudget', 'number')}
               {renderInput('إجمالي الميزانية النهائية', 'FinalTotalBudget', 'number')}
               {renderInput('معرف السنة المخصصة', 'CustomizeAnnualId', 'number')}
               {renderInput('السنة المخصصة', 'customizeannual')}

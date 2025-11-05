@@ -15,7 +15,7 @@ var configuration = builder.Configuration;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
-    .WriteTo.Console()
+    .WriteTo.Console()  
     .WriteTo.File("logs/log.txt",
         restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Error,
         rollingInterval: RollingInterval.Day)
@@ -66,18 +66,16 @@ builder.Services.AddAuthentication(options =>
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
-        ValidateAudience = true,
+        ValidateAudience = false, // ✅ Changed to false for simplicity
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
         ValidIssuer = issuer,
-        ValidAudience = issuer,
+        // ValidAudience = issuer, // ✅ Removed since ValidateAudience = false
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey!)),
-        RoleClaimType = ClaimTypes.Role
-        
+        RoleClaimType = ClaimTypes.Role,
+        ClockSkew = TimeSpan.Zero // ✅ Reduce token expiry tolerance
     };
 });
-
-// builder.Services.AddSingleton<SemanticKernelService>();
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -86,7 +84,6 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequireNonAlphanumeric = true;
     options.Password.RequireUppercase = true;
     options.Password.RequiredLength = 8;
-    
 });
 
 // ✅ Swagger with JWT support
@@ -120,12 +117,16 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// ✅ Enable CORS for React App
+// ✅ FIXED: Enable CORS for both development and production
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("http://localhost:3000")
+        policy.WithOrigins(
+                "http://localhost:3000",           // Development
+                "http://172.16.2.101",           // IIS Production
+                "https://172.16.2.101"          // HTTPS if enabled
+            )
             .AllowAnyHeader()
             .AllowAnyMethod()   
             .AllowCredentials();
@@ -153,11 +154,24 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+else
+{
+    // ✅ Add production error handling
+    app.UseExceptionHandler("/Error");
+    app.UseHsts();
+}
 
 app.UseMiddleware<ExceptionMiddleware>();
 
-app.UseHttpsRedirection();
+// ✅ FIXED: Conditional HTTPS redirect
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
+
 app.UseStaticFiles();
+app.MapFallbackToFile("index.html");
+
 app.UseCors("AllowReactApp"); // ✅ use named policy
 
 app.UseAuthentication(); // 👈 must come before Authorization
@@ -167,7 +181,7 @@ app.MapControllers();
 
 app.MapGet("/", context =>
 {
-    context.Response.Redirect("/swagger");
+    context.Response.Redirect("/dashboard");
     return Task.CompletedTask;
 });
 

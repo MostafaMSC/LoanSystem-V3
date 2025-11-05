@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkloan_system=self.webpackChunkloan_system||[]).push([[381],{7381:(e,t,r)=>{r.r(t),r.d(t,{default:()=>a});r(5043);var s=r(3216),l=r(579);const a=e=>{let{children:t,allowedRoles:r}=e;return(()=>{const e=localStorage.getItem("roles");if(!e)return[];try{return JSON.parse(e)}catch{return[]}})().some((e=>r.includes(e)))?t:(0,l.jsx)(s.C5,{to:"/",replace:!0})}}}]);
+//# sourceMappingURL=381.43391649.chunk.js.map

@@ -264,17 +264,22 @@ export default function RevenueCostList() {
 
   const fetchAllRevenueInfo = async () => {
     try {
-      const res = await api.get('/RevenuInfo/GetAllRevenues');
+        const res = await api.get('/RevenuInfo/GetAllRevenues');
       let revenueData = [];
-      if (Array.isArray(res.data)) revenueData = res.data;
-      else if (res.data?.Loans) revenueData = res.data.Loans;
-      else if (res.data?.loans) revenueData = res.data.loans;
+        if (res.data.loans) {
+          revenueData = res.data.loans;
+        } else if (res.data.revenues) {
+          revenueData = res.data.revenues;
+        } else if (Array.isArray(res.data)) {
+          revenueData = res.data;
+        }
       setAllRevenueInfo(revenueData);
     } catch {
       console.error('Error fetching revenue info');
       setAllRevenueInfo([]);
     }
   };
+
 
   const fetchNonSovereignRevenues = async () => {
     try {
@@ -393,7 +398,7 @@ export default function RevenueCostList() {
                   resetFilters();
                 }}
               >
-                السيادية
+                الايرادات السيادية
               </button>
             </li>
             <li className="nav-item">
@@ -405,7 +410,7 @@ export default function RevenueCostList() {
                   resetFilters();
                 }}
               >
-                غير السيادية
+                الايرادات غير السيادية
               </button>
             </li>
           </ul>
@@ -534,7 +539,9 @@ export default function RevenueCostList() {
                 <button className="btn btn-outline-success btn-lg m-2" onClick={() => setShowNonSovereignModal(true)}>
                    اضافة الايرادات غير السيادية <img src="/Images/notes.png" alt="" width="25px" height="25px" />
                 </button>
+                
               </OverlayTrigger>
+              
             </div>
             
             {/* Date Filter Section */}
@@ -562,9 +569,23 @@ export default function RevenueCostList() {
                   </button>
                 </OverlayTrigger>
               </div>
-              <div className="text-muted">
-                النتائج المعروضة: {currentFilteredData.length} من أصل {totalRevenuesCount}
-              </div>
+              <div className="col-md-4">
+                  <select
+                    className="form-control"
+                    value={pageSize}
+                    onChange={(e) => {
+                      setPageSize(e.target.value);
+                      setCurrentPage(1);
+                    }}
+                  >
+                    <option value={10}>10 من أصل {totalRevenuesCount} سجل</option>
+                    <option value={20}>20 من أصل {totalRevenuesCount} سجل</option>
+                    <option value={30}>30 من أصل {totalRevenuesCount} سجل</option>
+                    <option value={50}>50 من أصل {totalRevenuesCount} سجل</option>
+                    <option value={100}>100 من أصل {totalRevenuesCount} سجل</option>
+                  </select>
+                </div>
+
             </div>
             
             <table className="contracts-table">
@@ -658,7 +679,7 @@ export default function RevenueCostList() {
                 
                 {activeTab === 'sovereign' ? (
                   <>
-                    <p><strong>اسم الإيراد:</strong> {selectedRevenue.revenueInfo?.revenueName ?? 'غير متوفر'}</p>
+                    <p><strong>اسم الإيراد:</strong> {selectedRevenue.loans.revenueName ?? 'غير متوفر'}</p>
                     <p><strong>القسم:</strong> {selectedRevenue.revenueInfo?.section ?? 'غير متوفر'}</p>
                     <p><strong>الفصل:</strong> {selectedRevenue.revenueInfo?.chapter ?? 'غير متوفر'}</p>
                                         <p><strong>المادة:</strong> {selectedRevenue.revenueInfo?.material ?? 'غير متوفر'}</p>
@@ -699,8 +720,10 @@ export default function RevenueCostList() {
                 <button type="button" className="btn-close" onClick={() => setShowNonSovereignModal(false)}></button>
               </div>
               <div className="modal-body" style={{ direction: 'rtl', textAlign: 'right' }}>
+
                 <form onSubmit={handleNonSovereignSubmit}>
-                  <div className="mb-3">
+                  <div className='DefaulInfo'>
+                  <div className="mb-0">
                     <label className="form-label">التشكيل</label>
                     <input
                       type="text"
@@ -708,44 +731,10 @@ export default function RevenueCostList() {
                       value={nonSovereignForm.department}
                       onChange={(e) => setNonSovereignForm({ ...nonSovereignForm, department: e.target.value })}
                       required
+                      readOnly
                     />
                   </div>
-                  <div className="mb-3">
-                    <label className="form-label">حصة الوزارة</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      value={nonSovereignForm.ministryShare}
-                      onChange={(e) => setNonSovereignForm({ ...nonSovereignForm, ministryShare: parseFloat(e.target.value) || 0 })}
-                      min="0"
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">حصة المالية</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      value={nonSovereignForm.financeShare}
-                      onChange={(e) => setNonSovereignForm({ ...nonSovereignForm, financeShare: parseFloat(e.target.value) || 0 })}
-                      min="0"
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">تأمين تعظيم الموارد</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      value={nonSovereignForm.resourceMaximizationInsurance}
-                      onChange={(e) =>
-                        setNonSovereignForm({ ...nonSovereignForm, resourceMaximizationInsurance: parseFloat(e.target.value) || 0 })
-                      }
-                      min="0"
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
+                  <div className="mb-0">
                     <label className="form-label">السنة</label>
                     <input
                       type="number"
@@ -757,7 +746,7 @@ export default function RevenueCostList() {
                       required
                     />
                   </div>
-                  <div className="mb-3">
+                  <div className="mb-0">
                     <label className="form-label">الشهر</label>
                     <input
                       type="number"
@@ -769,8 +758,60 @@ export default function RevenueCostList() {
                       required
                     />
                   </div>
-                  <div className="mb-3">
-                    <label className="form-label">تاريخ التسجيل</label>
+                  
+
+                  </div>
+                  <h5 className="mt-4 text-center font-bold">ايرادات تعظيم الموارد</h5>
+                                    <hr/>
+
+                  <div className='DefaulInfo2' >
+
+                  <div className="mb-0">
+                    <label className="form-label">حصة الوزارة</label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      value={nonSovereignForm.ministryShare}
+                      onChange={(e) => setNonSovereignForm({ ...nonSovereignForm, ministryShare: parseFloat(e.target.value) || 0 })}
+                      min="0"
+                      required
+                    />
+                  </div>
+                  <div className="mb-0">
+                    <label className="form-label">حصة وزارية المالية</label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      value={nonSovereignForm.financeShare}
+                      onChange={(e) => setNonSovereignForm({ ...nonSovereignForm, financeShare: parseFloat(e.target.value) || 0 })}
+                      min="0"
+                      required
+                    />
+                  </div>
+
+                  </div>
+                  
+                                                <h5 className="mt-4 text-center font-bold">امانات تعظيم الموارد</h5>
+                  <hr/>
+
+                  <div className="mb-0" style={{ textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'flex-end' }}>
+                    <label className="form-label" style={{ padding: '0 10px' }}>المبلغ</label>
+
+                    <input
+                      type="number"
+                      style={{ width: '30%' }}
+                      className="form-control"
+                      value={nonSovereignForm.resourceMaximizationInsurance}
+                      onChange={(e) =>
+                        setNonSovereignForm({ ...nonSovereignForm, resourceMaximizationInsurance: parseFloat(e.target.value) || 0 })
+                      }
+                      min="0"
+                      required
+                    />
+                  </div>
+
+                  <div className="mb-0" style={{ display: 'none' , textAlign: 'center' }}>
+                    <label className="form-label" >تاريخ التسجيل</label>
                     <input
                       type="date"
                       className="form-control"
@@ -779,7 +820,7 @@ export default function RevenueCostList() {
                       required
                     />
                   </div>
-                  <div className="mb-3">
+                  <div className="mb-0" style={{ textAlign: 'center' , padding: '15px' }}>
                     <label className="form-label">الملاحظات</label>
                     <textarea
                       className="form-control"
@@ -791,11 +832,12 @@ export default function RevenueCostList() {
                     <button type="button" className="btn btn-secondary" onClick={() => setShowNonSovereignModal(false)}>
                       إلغاء
                     </button>
-                    <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+                    <button type="submit" className="btn btn-primary">
                       {isSubmitting ? 'جاري الحفظ...' : 'حفظ'}
                     </button>
                   </div>
                 </form>
+                
               </div>
             </div>
           </div>
@@ -803,117 +845,139 @@ export default function RevenueCostList() {
       )}
 
       {/* Edit Non-Sovereign Revenue Modal */}
-      {showEditNonSovereignModal && (
-        <div className="modal fade show d-block" tabIndex="-1" role="dialog">
-          <div className="modal-dialog modal-lg" role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">تعديل الإيراد غير السيادي</h5>
-                <button type="button" className="btn-close" onClick={() => setShowEditNonSovereignModal(false)}></button>
-              </div>
-              <div className="modal-body" style={{ direction: 'rtl', textAlign: 'right' }}>
-                <form onSubmit={handleEditNonSovereignSubmit}>
-                  <div className="mb-3">
-                    <label className="form-label">التشكيل</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      value={editNonSovereignForm.department}
-                      onChange={(e) => setEditNonSovereignForm({ ...editNonSovereignForm, department: e.target.value })}
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">حصة الوزارة</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      value={editNonSovereignForm.ministryShare}
-                      onChange={(e) => setEditNonSovereignForm({ ...editNonSovereignForm, ministryShare: parseFloat(e.target.value) || 0 })}
-                      min="0"
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">حصة المالية</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      value={editNonSovereignForm.financeShare}
-                      onChange={(e) => setEditNonSovereignForm({ ...editNonSovereignForm, financeShare: parseFloat(e.target.value) || 0 })}
-                      min="0"
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">تأمين تعظيم الموارد</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      value={editNonSovereignForm.resourceMaximizationInsurance}
-                      onChange={(e) =>
-                        setEditNonSovereignForm({ ...editNonSovereignForm, resourceMaximizationInsurance: parseFloat(e.target.value) || 0 })
-                      }
-                      min="0"
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">السنة</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      value={editNonSovereignForm.year}
-                      onChange={(e) => setEditNonSovereignForm({ ...editNonSovereignForm, year: parseInt(e.target.value) || new Date().getFullYear() })}
-                      min="2000"
-                      max="2100"
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">الشهر</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      value={editNonSovereignForm.month}
-                      onChange={(e) => setEditNonSovereignForm({ ...editNonSovereignForm, month: parseInt(e.target.value) || new Date().getMonth() + 1 })}
-                      min="1"
-                      max="12"
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">تاريخ التسجيل</label>
-                    <input
-                      type="date"
-                      className="form-control"
-                      value={editNonSovereignForm.recordedDate}
-                      onChange={(e) => setEditNonSovereignForm({ ...editNonSovereignForm, recordedDate: e.target.value })}
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">الملاحظات</label>
-                    <textarea
-                      className="form-control"
-                      value={editNonSovereignForm.notes}
-                      onChange={(e) => setEditNonSovereignForm({ ...editNonSovereignForm, notes: e.target.value })}
-                    ></textarea>
-                  </div>
-                  <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" onClick={() => setShowEditNonSovereignModal(false)}>
-                      إلغاء
-                    </button>
-                    <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
-                      {isSubmitting ? 'جاري الحفظ...' : 'حفظ التعديلات'}
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
+{showEditNonSovereignModal && (
+  <div className="modal fade show d-block" tabIndex="-1" role="dialog">
+    <div className="modal-dialog modal-lg" role="document">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title">تعديل الإيراد غير السيادي</h5>
+          <button
+            type="button"
+            className="btn-close"
+            onClick={() => setShowEditNonSovereignModal(false)}
+          ></button>
         </div>
-      )}
+        <div className="modal-body" style={{ direction: 'rtl', textAlign: 'right' }}>
+          <form onSubmit={handleEditNonSovereignSubmit}>
+            <div className="mb-0">
+              <label className="form-label">التشكيل</label>
+              <input
+                type="text"
+                className="form-control"
+                value={editNonSovereignForm.department}
+                onChange={(e) => setEditNonSovereignForm({ ...editNonSovereignForm, department: e.target.value })}
+                required
+                readOnly
+              />
+            </div>
+
+            <h5 className="mt-4 text-center font-bold">ايرادات تعظيم الموارد</h5>
+            <hr />
+
+            <div className="mb-0">
+              <label className="form-label">حصة الوزارة</label>
+              <input
+                type="number"
+                className="form-control"
+                value={editNonSovereignForm.ministryShare}
+                onChange={(e) => setEditNonSovereignForm({ ...editNonSovereignForm, ministryShare: parseFloat(e.target.value) || 0 })}
+                min="0"
+                required
+              />
+            </div>
+
+            <div className="mb-0">
+              <label className="form-label">حصة وزارة المالية</label>
+              <input
+                type="number"
+                className="form-control"
+                value={editNonSovereignForm.financeShare}
+                onChange={(e) => setEditNonSovereignForm({ ...editNonSovereignForm, financeShare: parseFloat(e.target.value) || 0 })}
+                min="0"
+                required
+              />
+            </div>
+
+            <h5 className="mt-4 text-center font-bold">امانات تعظيم الموارد</h5>
+            <hr />
+
+            <div className="mb-0" style={{ textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'flex-end' }}>
+              <label className="form-label" style={{ padding: '0 10px' }}>المبلغ</label>
+              <input
+                type="number"
+                style={{ width: '30%' }}
+                className="form-control"
+                value={editNonSovereignForm.resourceMaximizationInsurance}
+                onChange={(e) => setEditNonSovereignForm({ ...editNonSovereignForm, resourceMaximizationInsurance: parseFloat(e.target.value) || 0 })}
+                min="0"
+                required
+              />
+            </div>
+
+            <div className="mb-0">
+              <label className="form-label">السنة</label>
+              <input
+                type="number"
+                className="form-control"
+                value={editNonSovereignForm.year}
+                onChange={(e) => setEditNonSovereignForm({ ...editNonSovereignForm, year: parseInt(e.target.value) || new Date().getFullYear() })}
+                min="2000"
+                max="2100"
+                required
+              />
+            </div>
+
+            <div className="mb-0">
+              <label className="form-label">الشهر</label>
+              <input
+                type="number"
+                className="form-control"
+                value={editNonSovereignForm.month}
+                onChange={(e) => setEditNonSovereignForm({ ...editNonSovereignForm, month: parseInt(e.target.value) || new Date().getMonth() + 1 })}
+                min="1"
+                max="12"
+                required
+              />
+            </div>
+
+            <div className="mb-0" style={{ display: 'none', textAlign: 'center' }}>
+              <label className="form-label">تاريخ التسجيل</label>
+              <input
+                type="date"
+                className="form-control"
+                value={editNonSovereignForm.recordedDate}
+                onChange={(e) => setEditNonSovereignForm({ ...editNonSovereignForm, recordedDate: e.target.value })}
+                required
+              />
+            </div>
+
+            <div className="mb-0" style={{ textAlign: 'center', padding: '15px' }}>
+              <label className="form-label">الملاحظات</label>
+              <textarea
+                className="form-control"
+                value={editNonSovereignForm.notes}
+                onChange={(e) => setEditNonSovereignForm({ ...editNonSovereignForm, notes: e.target.value })}
+              ></textarea>
+            </div>
+
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={() => setShowEditNonSovereignModal(false)}
+              >
+                إلغاء
+              </button>
+              <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+                {isSubmitting ? 'جاري الحفظ...' : 'حفظ التعديلات'}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
 
       <Footer />
     </>

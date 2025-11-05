@@ -5,8 +5,6 @@ import Footer from './Footer';
 import '../Style/AddContract.css';
 import { toast as toastify } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-
-export default function AddContract({ onClose }) {
   const initialState = {
     ContractNumber: '',ContractName: '',
     ContractType: null,
@@ -30,6 +28,8 @@ export default function AddContract({ onClose }) {
     Notes: '',
     CostChange: null,
   };
+export default function AddContract({ onClose }) {
+
 const navigate = useNavigate();
   const numericFields = [
     'ContractType',
@@ -51,8 +51,7 @@ const navigate = useNavigate();
   const dateFields = ['ContractSigningDate', 'StartDate', 'CompleteDate'];
 
   const [formData, setFormData] = useState(initialState);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [status, setStatus] = useState({ loading: false, error: '', success: '' });
   const [loading, setLoading] = useState(false);
   const [loans, setLoans] = useState([]);
   const [loanLoading, setLoanLoading] = useState(false);
@@ -118,31 +117,29 @@ const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
-    setSuccess('');
-    if (!formData.ContractNumber || !formData.ContractName) {
-      setError('يرجى إدخال رقم واسم العقد.');
-      return;
-    }
+    setStatus((prev) => ({ ...prev, error: '', success: '' }));
     
     if (formData.ContractAmount !== null && formData.ContractAmount < 0) {
-      setError('مبلغ العقد لا يمكن أن يكون سالباً.');
+      setStatus((prev) => ({ ...prev, error: 'مبلغ العقد لا يمكن أن يكون سالباً.' }));
       return;
     }
     setLoading(true);
     try {
       const response = await api.post('/Contracts/AddContract', formData);
-      setSuccess('تم إضافة العقد بنجاح!');
+      setStatus((prev) => ({ ...prev, success: 'تم إضافة العقد بنجاح!' }));
       toast({
         title: 'تمت الإضافة بنجاح',
         description: `تمت إضافة العقد ${formData.ContractName} للشركة ${formData.CompanyName || 'غير محدد'}`,
       });
       setFormData(initialState);
     } catch (err) {
-      const errorMessage = err.response?.status === 401
-        ? 'غير مصرح – الرجاء تسجيل الدخول.'
-        : err.response?.data?.message || 'حدث خطأ أثناء إضافة العقد.';
-      setError(errorMessage);
+const errorMessage =
+  err?.response?.status === 401
+    ? 'غير مصرح – الرجاء تسجيل الدخول.'
+    : err?.response?.data?.message ||
+      err?.message ||
+      'فشل الاتصال بالخادم. حاول مرة أخرى.';
+
     } finally {
       setLoading(false);
       if (onClose) onClose();
@@ -156,25 +153,24 @@ const navigate = useNavigate();
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      {/* <NavMenu /> */}
       <main className="flex-fill container my-4">
         <div className="contract-form-container">
           <h2 className="mb-4">إضافة عقد جديد</h2>
-          {error && <div className="alert alert-danger">{error}</div>}
-          {success && <div className="alert alert-success">{success}</div>}
+          {status.error && <div className="alert alert-danger">{status.error}</div>}
+          {status.success && <div className="alert alert-success">{status.success}</div>}
           <form onSubmit={handleSubmit} className="row g-3">
             <div className="col-12">
               <h4 className="text-primary border-bottom pb-2">المعلومات الأساسية</h4>
             </div>
 
-            <div className="col-md-6">
+            <div className="col">
               <label className="form-label">رقم العقد <span className="text-danger">*</span>:</label>
               <input type="text" name="ContractNumber" required
                 className="form-control" value={formData.ContractNumber}
                 onChange={handleChange} placeholder="أدخل رقم العقد"
               />
             </div>
-            <div className="col-md-6">
+            <div className="col">
               <label className="form-label">اسم العقد <span className="text-danger">*</span>:</label>
               <input type="text" name="ContractName" className="form-control"
                 value={formData.ContractName} onChange={handleChange} required
@@ -210,7 +206,7 @@ const navigate = useNavigate();
                 <option value="2">منجز</option>
                 </select>
             </div>
-            <div className="col-md-6">
+            <div className="col">
               <label className="form-label">اختر القرض المرتبط:</label>
               {loanLoading ? (
                 <div className="form-control d-flex align-items-center">
@@ -239,7 +235,7 @@ const navigate = useNavigate();
                 </>
               )}
             </div>
-            <div className="col-md-6">
+            <div className="col">
               <label className="form-label">مبلغ العقد:</label>
               <input type="number" name="ContractAmount" className="form-control"
                 value={formData.ContractAmount ?? ''} onChange={handleChange} required
@@ -284,7 +280,7 @@ const navigate = useNavigate();
             </div>
 
             {/* Duration In Days */}
-            <div className="col-md-6">
+            <div className="col">
               <label className="form-label">المدة المطلوبة (يوم):</label>
               <input
                 type="number"
@@ -298,7 +294,7 @@ const navigate = useNavigate();
             </div>
 
             {/* Added Days */}
-            <div className="col-md-6">
+            <div className="col">
               <label className="form-label">المدة المضافة (يوم):</label>
               <input
                 type="number"
@@ -310,7 +306,7 @@ const navigate = useNavigate();
                 placeholder="الأيام الإضافية"
               />
             </div>
-            <div className="col-md-6">
+            <div className="col">
               <label className="form-label">اوامر الغيار:</label>
               <input type="number" name="CostChange" className="form-control"
                 value={formData.CostChange ?? ''} onChange={handleChange} required
@@ -323,7 +319,6 @@ const navigate = useNavigate();
 
             {/* Notes */}
             <div className="col-12">
-              <label className="form-label">ملاحظات:</label>
               <textarea
                 name="Notes"
                 className="form-control"
@@ -360,8 +355,7 @@ const navigate = useNavigate();
                   className="btn btn-secondary btn-lg px-4"
                   onClick={() => {
                     setFormData(initialState);
-                    setError('');
-                    setSuccess('');
+                    setStatus({ loading: false, error: '', success: '' });
                     navigate('/contracts');
                     if (onClose) onClose();
                   }}

@@ -10,6 +10,8 @@ import '../Style/Cards.css';
 import AddContract from './AddContract';
 import EditContract from './EditContract';
 import AddRevenue from './AddRevenu'
+import FileTree from './FileTree'
+
 export default function ContractsList() {
   const [contracts, setContracts] = useState([]);
   const [loans, setLoans] = useState([]);
@@ -120,14 +122,29 @@ const handleCancel = () => {
     }
   };
 
-  const fetchDocuments = async (contractId) => {
-    try {
-      const res = await api.get(`/Contracts/GetDocumentsByContractId/${contractId}`);
-      setContractDocuments(res.data.documents || []);
-    } catch (error) {
-      toast({ title: 'خطأ', description: 'فشل في جلب الوثائق' });
+const fetchDocuments = async (contractId) => {
+  try {
+    const res = await api.get(`/Contracts/GetDocumentsByContractId/${contractId}`);
+    
+    // Handle different response formats
+    let docs = [];
+    if (res.data?.documents) {
+      docs = Array.isArray(res.data.documents) ? res.data.documents : [];
+    } else if (Array.isArray(res.data)) {
+      docs = res.data;
+    } else if (typeof res.data === 'object' && res.data !== null) {
+      // If it's an object but not an array, try to find array properties
+      docs = Object.values(res.data).find(item => Array.isArray(item)) || [];
     }
-  };
+    
+    console.log('Documents fetched:', docs); // Debug log
+    setContractDocuments(docs);
+  } catch (error) {
+    console.error('Error fetching documents:', error);
+    toast({ title: 'خطأ', description: 'فشل في جلب الوثائق' });
+    setContractDocuments([]);
+  }
+};
 
   const fetchLoans = async () => {
     try {
@@ -552,6 +569,8 @@ const handleCancel = () => {
                   <OverlayTrigger placement="top" overlay={<Tooltip>عرض</Tooltip>}>
                     <button className="btn btn-info btn-sm me-0" onClick={() => {
                       setSelectedContract(c);
+                      setSelectedContractId(c.id); // Add this line to ensure ID is set
+
                       fetchDocuments(c.id);
                       setShowModal(true);
                     }}>
@@ -601,163 +620,222 @@ const handleCancel = () => {
           </div>
         )}
       </div>
+// Update the modal to show loading state and better error handling:
+{showModal && selectedContract && (
+  <div className="modal fade show d-block" tabIndex="-1" role="dialog" onClick={() => setShowModal(false)}>
+    <div className="modal-dialog modal-lg" role="document" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title">تفاصيل العقد</h5>
+          <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
+        </div>
+        <div className="modal-body">
+          <p><strong>رقم العقد:</strong> {selectedContract.contractNumber}</p>
+          <p><strong>اسم العقد:</strong> {selectedContract.contractName}</p>
+          <p><strong>الشركة:</strong> {selectedContract.companyName}</p>
+          <p><strong>نوع العقد:</strong> {CONTRACT_TYPES.find(t => t.id === selectedContract.contractType)?.label || 'غير معروف'}</p>
+          <p><strong>حالة العقد:</strong> {STATE_TYPES.find(s => s.id === selectedContract.status)?.Status || 'غير معروف'}</p>
+          <p><strong>المدة المطلوبة:</strong> {selectedContract.durationInDays} يوم</p>
+          <p><strong>القرض المرتبط:</strong> {getLoanNameById(selectedContract.loanId)}</p>
+          <p><strong>المدة المضافة:</strong> {selectedContract.addedDays}</p>
+          <p><strong>تاريخ التوقيع:</strong> {selectedContract.contractSigningDate?.slice(0, 10)}</p>
+          <p><strong>تاريخ المباشرة:</strong> {selectedContract.startDate?.slice(0, 10)}</p>
+          <p><strong>مبلغ العقد:</strong> {selectedContract.contractAmount}</p>
+          <p><strong>ملاحظات:</strong> {selectedContract.notes}</p>
+          <hr />
+          <h5>الوثائق المرفقة:</h5>
+          {contractDocuments && Array.isArray(contractDocuments) && contractDocuments.length > 0 ? (
+            <>
+              <p className="text-muted">عدد الوثائق: {contractDocuments.length}</p>
+              <FileTree files={contractDocuments} contractId={selectedContract.id} />
+            </>
+          ) : (
+            <p className="text-warning">لا توجد وثائق مرفقة لهذا العقد.</p>
+          )}
+        </div>
+        <button
+  className="btn btn-success"
+  onClick={() => window.open(`/api/UploadFolder/DownloadContractDocuments?contractId=${selectedContractId}`)}
+>
+  تحميل كل الوثائق (ZIP)
+</button>
+        <div className="modal-footer">
+          <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>إغلاق</button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
 
-      {/* Modal for viewing contract details */}
-      {showModal && selectedContract && (
-<div className="modal fade show d-block" tabIndex="-1" role="dialog" onClick={() => setShowModal(false)}>
-  <div className="modal-dialog modal-lg" role="document" onClick={(e) => e.stopPropagation()}>
+{showAddContract && (
+  <div className="modal-backdrop" onClick={() => setShowAddContract(false)}>
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <AddContract 
+        onClose={() => handleCancel()} 
+      />
+    </div>
+  </div>
+)}
 
-            <div className="modal-content" >
-              <div className="modal-header">
-                <h5 className="modal-title">تفاصيل العقد</h5>
+{/* Add this inside your ContractsList component's JSX */}
+
+{showUploadModal && (
+  <div className="modal fade show d-block" tabIndex="-1" role="dialog" onClick={() => setShowUploadModal(false)}>
+    <div className="modal-dialog modal-lg" role="document" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title">إرفاق وثائق للعقد ذو التسلسل {selectedContractId}</h5>
+          <button type="button" className="btn-close" onClick={() => setShowUploadModal(false)}></button>
+        </div>
+        <div className="modal-body">
+          <div className="mb-3">
+            <label className="form-label fw-bold">اختر مجلد يحتوي على الملفات والمجلدات الفرعية:</label>
+            <div className="border border-dashed p-4 text-center rounded bg-light">
+              <input
+                id="folder-input"
+                type="file"
+                webkitdirectory="true"
+                directory=""
+                multiple
+                onChange={(e) => {
+                  const files = Array.from(e.target.files);
+                  setSelectedFiles(files);
+                }}
+                className="d-none"
+              />
+              <label htmlFor="folder-input" className="mb-0">
+                <div className="cursor-pointer">
+                  <img src="/Images/folder.png" alt="folder" width="40px" height="40px" className="mb-2" />
+                  <p className="mb-2">اضغط لاختيار مجلد أو اسحب ملفات هنا</p>
+                  <small className="text-muted">سيتم حفظ بنية المجلدات كما هي</small>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          {selectedFiles.length > 0 && (
+            <div className="mt-3 mb-3">
+              <div className="alert alert-info mb-3">
+                <strong>الملفات المختارة: {selectedFiles.length}</strong>
               </div>
-              <div className="modal-body" >
-                <p><strong>رقم العقد:</strong> {selectedContract.contractNumber}</p>
-                <p><strong>اسم العقد:</strong> {selectedContract.contractName}</p>
-                <p><strong>الشركة:</strong> {selectedContract.companyName}</p>
-                <p><strong>نوع العقد:</strong> {CONTRACT_TYPES.find(t => t.id === selectedContract.contractType)?.label || 'غير معروف'}</p>
-                <p><strong>حالة العقد:</strong> {STATE_TYPES.find(s => s.id === selectedContract.status)?.Status || 'غير معروف'}</p>
-                <p><strong>المدة المطلوبة:</strong> {selectedContract.durationInDays} يوم</p>
-                <p><strong>القرض المرتبط:</strong> {getLoanNameById(selectedContract.loanId)}</p>
-                <p><strong>المدة المضافة:</strong> {selectedContract.addedDays}</p>
-                <p><strong>تاريخ التوقيع:</strong> {selectedContract.contractSigningDate?.slice(0, 10)}</p>
-                <p><strong>تاريخ المباشرة:</strong> {selectedContract.startDate?.slice(0, 10)}</p>
-                <p><strong>مبلغ العقد:</strong> {selectedContract.contractAmount}</p>
-                <p><strong>ملاحظات:</strong> {selectedContract.notes}</p>
-                <hr />
-                <h5>الوثائق المرفقة:</h5>
-                {contractDocuments.length > 0 ? (
-                  <ul>
-                    {contractDocuments.map((doc) => (
-                      <li key={doc.id}>
-                        <NavLink
-                          to={`http://localhost:5109${doc.filePath}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          📄 {doc.fileName}
-                        </NavLink>
-                                          <OverlayTrigger placement="top" overlay={<Tooltip>حذف</Tooltip>}>
-                    <button className="btn btn-danger mx-2 btn-sm me-1" onClick={() => handleDeleteDoc(doc.id)}>
-                      <img src="/Images/trash.png" alt="" width="15px" height="15px" />
-                    </button>
-                  </OverlayTrigger>
+              
+              <div className="bg-light p-3 rounded" style={{ maxHeight: '300px', overflowY: 'auto' }}>
+                <ul style={{ listStyle: 'none', paddingLeft: '0' }}>
+                  {selectedFiles.map((file, index) => {
+                    const relativePath = file.webkitRelativePath || file.name;
+                    return (
+                      <li key={index} style={{ padding: '4px 0', wordBreak: 'break-word' }}>
+                        <small className="text-muted">📄 {relativePath}</small>
                       </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p>لا توجد وثائق مرفقة لهذا العقد.</p>
-                )}
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>إغلاق</button>
+                    );
+                  })}
+                </ul>
               </div>
             </div>
-          </div>
-        </div>
-      )}
-      {showAddContract && (
-        <div className="modal-backdrop" onClick={() => setShowAddContract(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          )}
+
+          <div className="mt-3 d-flex gap-2">
             <button
-              className="btn btn-danger btn-sm"
-              onClick={() => setShowAddContract(false)}
+              className="btn btn-primary flex-grow-1"
+              onClick={async () => {
+                if (selectedFiles.length === 0) {
+                  toast({ title: 'تنبيه', description: 'يرجى اختيار مجلد يحتوي على ملفات' });
+                  return;
+                }
+
+                try {
+                  // Create FormData with folder structure
+                  const formData = new FormData();
+                  
+                  selectedFiles.forEach((file) => {
+                    // Use webkitRelativePath to preserve folder structure
+                    const filePath = file.webkitRelativePath || file.name;
+                    formData.append('Files', file, file.webkitRelativePath || file.name);
+                  });
+                  
+                  formData.append('ContractId', selectedContractId);
+
+                  // Upload to the API
+                  const response = await api.post('/UploadFolder/UploadContractDocuments', formData, {
+                    headers: { 'Content-Type': 'multipart/form-data' },
+                  });
+
+                  toast({ 
+                    title: 'تم الرفع بنجاح', 
+                    description: `تم رفع ${response.data.uploadedFiles.length} ملف بنجاح` 
+                  });
+
+                  setShowUploadModal(false);
+                  setSelectedFiles([]);
+                  
+                  // Refresh the data
+                  if (fetchDocuments) {
+                    await fetchDocuments(selectedContractId);
+                  }
+                  if (fetchContracts) {
+                    await fetchContracts(currentPage);
+                  }
+
+                } catch (error) {
+                  const errorMsg = error.response?.data?.error || 'فشل في رفع الملفات';
+                  toast({ title: 'خطأ', description: errorMsg });
+                  console.error('Upload error:', error);
+                }
+              }}
+              disabled={selectedFiles.length === 0}
+            >
+              📤 رفع الملفات والمجلدات
+            </button>
+
+            <button 
+              className="btn btn-secondary" 
+              onClick={() => {
+                setShowUploadModal(false);
+                setSelectedFiles([]);
+              }}
             >
               إغلاق
             </button>
-            <AddContract 
-              onClose={() => handleCancel()} 
-            />
           </div>
         </div>
-      )}
+      </div>
+    </div>
+  </div>
+)}
 
-      {/* Modal for uploading documents */}
-      {showUploadModal && (
-<div className="modal fade show d-block" tabIndex="-1" role="dialog" onClick={() => setShowUploadModal(false)}>
-  <div className="modal-dialog modal-lg" role="document" onClick={(e) => e.stopPropagation()}>
-
-            <div className="modal-content"  >
-              <div className="modal-header">
-                <h5 className="modal-title">إرفاق وثائق للعقد ذو التسلسل {selectedContractId}</h5>
-                <button type="button" className="btn-close" onClick={() => setShowUploadModal(false)}></button>
-              </div>
-              <div className="modal-body">
-                <input
-                  type="file"
-                  multiple
-                  onChange={(e) => setSelectedFiles([...e.target.files])}
-                  className="form-control"
-                />
-              </div>
-              <div className="modal-footer">
-                <button
-                  className="btn btn-primary"
-                  onClick={async () => {
-                    if (selectedFiles.length === 0) {
-                      toast({ title: 'تنبيه', description: 'يرجى اختيار ملفات أولاً' });
-                      return;
-                    }
-                    const formData = new FormData();
-                    selectedFiles.forEach((file) => formData.append('Files', file));
-                    formData.append('ContractId', selectedContractId);
-
-                    try {
-                      await api.post('/Contracts/UploadContractDocuments', formData, {
-                        headers: { 'Content-Type': 'multipart/form-data' },
-                      });
-                      toast({ title: 'تم الرفع', description: 'تم رفع الوثائق بنجاح' });
-                      setShowUploadModal(false);
-                      setSelectedFiles([]);
-                    } catch (error) {
-                      toast({ title: 'خطأ', description: 'فشل في رفع الوثائق' });
-                    }
-                  }}
-                >
-                  رفع الوثائق
-                </button>
-                <button className="btn btn-secondary" onClick={() => setShowUploadModal(false)}>
-                  إغلاق
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-      
 {showEditContract && (
-        <div className="modal-backdrop" onClick={() => setShowEditContract(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="btn btn-danger btn-sm"
-              onClick={() => setShowEditContract(false)}
-            >
-              إغلاق
-            </button>
-            <EditContract
-              contractId={showEditContract}
-              onClose={() => handleCancel()}
-            />
-          </div>
-        </div>
-      )}
+  <div className="modal-backdrop" onClick={() => setShowEditContract(false)}>
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+      <button
+        className="btn btn-danger btn-sm"
+        onClick={() => setShowEditContract(false)}
+      >
+        إغلاق
+      </button>
+      <EditContract
+        contractId={showEditContract}
+        onClose={() => handleCancel()}
+      />
+    </div>
+  </div>
+)}
 
-      {showAddRevenue && (
-        <div className="modal-backdrop" onClick={() => setShowAddRevenue(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="btn btn-danger btn-sm"
-              onClick={() => setShowAddRevenue(false)}
-            >
-              إغلاق
-            </button>
-            <AddRevenue
-              contractId={showAddRevenue}
-              onClose={() => handleCancel()}
-            />
-          </div>
-        </div>
-      )}
+  {showAddRevenue && (
+    <div className="modal-backdrop" onClick={() => setShowAddRevenue(false)}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <button
+          className="btn btn-danger btn-sm"
+          onClick={() => setShowAddRevenue(false)}
+        >
+          إغلاق
+        </button>
+        <AddRevenue
+          contractId={showAddRevenue}
+          onClose={() => handleCancel()}
+        />
+      </div>
+    </div>
+  )}
 
       <Footer />
     </>

@@ -375,14 +375,7 @@ export default function EditContract({ contractId, onClose  }) {
                 {renderInput('تاريخ الإنجاز', 'CompleteDate', 'date')}
                 {renderInput('مدة العقد بالأيام', 'DurationInDays', 'number')}
                 {renderInput('الأيام المضافة', 'AddedDays', 'number')}
-
                 {renderInput('مبلغ العقد', 'ContractAmount', 'number')}
-                {renderInput('الضمانات', 'InsuranceDeposits', 'number')}
-                {renderInput('الأمانات الضريبية', 'TaxTrusts', 'number')}
-                {renderInput('الغرامات', 'Penalties', 'number')}
-                {renderInput('الأمانات الأخرى', 'OtherTrusts', 'number')}
-
-
                 <div className="col-12 mb-3">
                   <label className="form-label">ملاحظات</label>
                   <textarea

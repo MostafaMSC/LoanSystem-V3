@@ -15,14 +15,12 @@
   font-family: 'Tajawal', sans-serif;
 }
 body {
-    font-family: 'Tajawal', sans-serif;
+  font-family: 'Tajawal', sans-serif;
   background: #f2f4f8;
   margin: 0;
   padding: 0;
 }
-.main-container{
-  height: 100vh;
-}
+
 /* LoginForm.css or Dashboard.css */
 .dashboard-container {
         background-color: #f8f9fa;

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkloan_system=self.webpackChunkloan_system||[]).push([[389],{6389:(s,e,a)=>{a.r(e),a.d(e,{default:()=>t});var n=a(579);const t=()=>(0,n.jsx)("h2",{children:"404 - Page Not Found"})}}]);
+//# sourceMappingURL=389.2b36068a.chunk.js.map

@@ -24,6 +24,8 @@ const RevenueCostReport = lazy(()=> import('./Component/RevenueCostReport'))
 const ChangePassword = lazy(()=> import('./Component/PasswordChangeForm'))
 const UploadDocuments = lazy(() => import('./Component/UploadDocuments'));
 const RevenueTotalReport = lazy(() => import('./Component/RevenueTotalReport'));
+const AdminDashboard = lazy(() => import('./Component/AdminDashboard.tsx'));
+const Department = lazy(() => import('./Component/Departments.js'));
 function App() {
   return (
     <Router>
@@ -98,6 +100,15 @@ function App() {
               </ProtectedRoute>
             }
           />
+          {/* Department */}
+          <Route
+            path="/Department"
+            element={
+              <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
+                <Department />
+              </ProtectedRoute>
+            }
+          />
 
           {/* Revenue */}
           <Route
@@ -105,6 +116,16 @@ function App() {
             element={
               <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
                 <AddRevenu />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* AdminDashboard */}
+          <Route
+            path="/AdminDashboard"
+            element={
+              <ProtectedRoute allowedRoles={['Admin', 'superadmin']}>
+                <AdminDashboard />
               </ProtectedRoute>
             }
           />

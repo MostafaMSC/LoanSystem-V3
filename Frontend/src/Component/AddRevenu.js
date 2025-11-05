@@ -637,11 +637,7 @@ if (!paymentId) return;
                     ))}
                   </select>
                   {loansError && <small className="text-danger">{loansError}</small>}
-                  {formData.LoanId && (
-                    <small className="text-muted d-block mt-1">
-                      القرض المختار: {getLoanNameById(formData.LoanId)}
-                    </small>
-                  )}
+
                 </div>
 
                 {renderInput('تاريخ توقيع العقد', 'ContractSigningDate', 'date', false, { readOnly: true })}
@@ -659,7 +655,7 @@ if (!paymentId) return;
                 {renderInput('اوامر الغيار', 'CostChange', 'number',false,{ readOnly: true })}
                 {renderInput('كلف الادراج في وزارة التخطيط', 'CostPlanMins', 'number')}
                 {renderInput('كلف العقد بعد اوامر الغيار', 'CostAfterChange', 'number', false, { readOnly: true })}
-                {renderInput('المبالغ المصروفة للشركة من قبل البنك الدولي', 'CostToNatiBank', 'number')}
+                {renderInput('المبالغ المصروفة من قبل البنك الدولي', 'CostToNatiBank', 'number')}
                 {renderInput('المصروف التراكمي', 'TotalCostPaid', 'number')}
                 {renderInput('المصروف كسلفة تشغيلية 10 %', 'OperationLoanCost', 'number')}
 
@@ -716,7 +712,7 @@ if (!paymentId) return;
                     </div>
                   )}
                   
-                  {!previousPaymentsLoading && !previousPaymentsError && previousPayments.length === 0 && (
+                  {!previousPaymentsLoading && !previousPaymentsError && previousPayments.length === 0 && showPaymentsCash && (
                     <div className="alert alert-info">
                       <i className="bi bi-info-circle"></i> لا توجد دفعات نقدية سابقة مسجلة لهذا العقد
                     </div>

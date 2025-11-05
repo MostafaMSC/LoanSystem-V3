@@ -1,0 +1,710 @@
+2025-08-27 09:39:15.395 +03:00 [ERR] An error occurred using the connection to database 'LoanSystem' on server '172.16.2.101'.
+2025-08-27 09:39:15.395 +03:00 [ERR] An error occurred using the connection to database 'LoanSystem' on server '172.16.2.101'.
+2025-08-27 09:39:15.417 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Loan_System.Data.ApplicationDbContext'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (64): The specified network name is no longer available.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:64,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (64): The specified network name is no longer available.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:64,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-08-27 09:39:15.417 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Loan_System.Data.ApplicationDbContext'.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (64): The specified network name is no longer available.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:64,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (64): The specified network name is no longer available.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:64,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-08-27 09:39:15.425 +03:00 [ERR] Error fetching revenue costs
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (64): The specified network name is no longer available.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:64,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at BudgetRevenueController.GetAllRevenuesCost(Int32 page, Int32 pageSize) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 358
+2025-08-27 09:39:15.426 +03:00 [ERR] Unhandled exception occurred.
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (64): The specified network name is no longer available.
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:64,State:0,Class:20
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Loan_System.Controller.AuthController.Refresh() in C:\Loan-System-master\loan_system\Controller\LoginController.cs:line 366
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Loan-System-master\loan_system\Modules\ExceptionMiddleware.cs:line 20
+2025-08-27 09:48:47.708 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":1,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:47.801 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":2,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:47.889 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":3,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:47.978 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":4,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:48.061 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":5,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:48.149 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":6,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:48.238 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":7,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:48.359 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":8,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:48.452 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":9,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:48.543 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":10,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:48.634 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":11,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:48.722 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":12,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:48.812 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":13,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:48.902 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":14,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:48.992 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":15,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:49.078 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":16,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:49.186 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":17,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:49.302 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":18,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:49.390 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":19,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:49.477 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":20,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:49.566 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":21,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:49.691 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":22,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:49.781 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":23,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:49.870 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":24,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:49.959 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":25,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:50.045 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":26,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:48:50.132 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":27,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:37.219 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":1,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:37.332 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":2,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:37.435 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":3,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:37.551 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":4,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:37.674 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":5,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:37.794 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":6,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:37.899 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":7,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:38.011 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":8,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:38.121 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":9,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:38.251 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":10,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:38.359 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":11,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:38.462 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":12,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:38.591 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":13,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:38.708 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":14,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:38.836 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":15,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:38.938 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":16,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:39.039 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":17,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:39.140 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":18,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:39.272 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":19,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:39.378 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":20,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:39.477 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":21,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:39.582 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":22,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:39.704 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":23,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:39.822 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":24,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:39.948 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":25,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:40.075 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":26,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35
+2025-08-27 09:52:40.201 +03:00 [ERR] Failed to deserialize model from: {"RevenueId":27,"Department":"\u0645\u0631\u0643\u0632 \u0627\u0644\u0648\u0632\u0627\u0631\u0629","RevenueCost":1,"Year":2025,"Month":8,"Notes":"\u062A\u0645\u062A \u0627\u0644\u0625\u0636\u0627\u0641\u0629 \u0645\u0646 \u0627\u0644\u0648\u0627\u062C\u0647\u0629"}
+System.Text.Json.JsonException: JSON deserialization for type 'BudgetRevenue' was missing required properties including: 'RevenueInfo'.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_JsonRequiredPropertyMissing(JsonTypeInfo parent, BitArray requiredPropertiesSet)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at BudgetRevenueController.AddRevenueCost(Object rawModel) in C:\Loan-System-master\loan_system\Controller\BudgetRevenueController.cs:line 35

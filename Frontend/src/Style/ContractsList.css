@@ -1,7 +1,7 @@
 .contracts-container {
-    padding: 20px;
     font-family: math;
     direction: rtl;
+    padding: 20px;
   }
   * {
     outline: none !important;
@@ -55,6 +55,41 @@
     flex-wrap: wrap;
     gap: 30px;
     font-size: 18px;
+}
+
+.modal-header {
+  border-bottom: none;
+  text-align: center;
+  padding: 0;
+}
+
+.modal-footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 16px;
+  width: 100%;
+}
+.modal-body form{
+    display: block;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+form label{
+  font-size: 14px;
+}
+.DefaulInfo{
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
+  gap: 20px;
+  text-align: center ;
+}
+.DefaulInfo2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: center;
 }
 .modal-content {
   direction: rtl;
